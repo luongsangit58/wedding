@@ -5,7 +5,8 @@
 	<div id="page">
         @include('blocks.nav')
         @include('blocks.header')
-        @include('blocks.gallery')     
+        @include('blocks.story')     
+        @include('blocks.section')     
         @include('blocks.footer') 
 	</div>  
     @include('blocks.gototop') 

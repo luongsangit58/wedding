@@ -1,4 +1,4 @@
-<div id="fh5co-counter" class="fh5co-bg fh5co-counter" style="background-image:url(images/img_bg_5.jpg);">
+<div id="fh5co-counter" class="fh5co-bg fh5co-counter" style="background-image:url(images/img_bg_3.jpg);">
     <div class="overlay"></div>
     <div class="container">
         <div class="row">

@@ -4,7 +4,6 @@
             <div class="col-md-12 text-center">
                 <p>
                     <small class="block">&copy; Nguyễn Lương Sang</small> 
-                    <!-- <small class="block">Designed by Nguyễn Lương Sang</small> -->
                 </p>
                 <p>
                     <ul class="fh5co-social-icons">

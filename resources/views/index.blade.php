@@ -7,9 +7,9 @@
         @include('blocks.header')
         @include('blocks.couple')
         @include('blocks.event')    
+        @include('blocks.testimonial')    
         @include('blocks.story')    
         @include('blocks.gallery')    
-        @include('blocks.testimonial')    
         <!-- @include('blocks.services')     -->
         <!-- @include('blocks.started')     -->
         @include('blocks.footer') 

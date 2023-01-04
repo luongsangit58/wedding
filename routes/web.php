@@ -19,10 +19,18 @@ Route::get('/', 'App\Http\Controllers\InvitationController@index');
 //     return view('index');
 // });
 
-Route::get('/anh', function () {
+Route::get('/anh', ['as'=>'anh', function() {
     return view('gallery');
-});
+}]);
 
 Route::get('/gui-loi-chuc', function () {
     return view('invitation');
+});
+
+Route::get('/chuyen-tinh', function () {
+    return view('story');
+});
+
+Route::get('/thiep-moi', function () {
+    return view('card');
 });

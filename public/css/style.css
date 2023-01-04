@@ -296,7 +296,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 .fh5co-cover {
-  height: 900px;
+  height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
@@ -309,12 +309,23 @@ h1, h2, h3, h4, h5, h6, figure {
   top: 0;
   left: 0;
   right: 0;
-  background-image:url(https://images.pexels.com/photos/1643409/pexels-photo-1643409.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
-  background-position: center center;
+  /* background-image:url('../images/cta-1.jpg'); */
+  background-image:url(https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg);
+  background-position: top center;
   background-attachment: fixed;
   height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
+}
+.box-overley {
+  margin-top: 53%;
+}
+/* Desktops and laptops ----------- */
+@media only screen 
+  and (max-width: 1536px) { 
+  .box-overley {
+    margin-top: 35%;
+  }
 }
 .fh5co-cover > .fh5co-container {
   position: relative;
@@ -322,19 +333,40 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 @media screen and (max-width: 768px) {
   .fh5co-cover {
-    height: 600px;
+    height: 100vh;
+  }
+  .fh5co-cover .overlay {
+    z-index: 0;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    /* background-image:url(https://images.pexels.com/photos/6788862/pexels-photo-6788862.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1); */
+    background-image:url('../images/cta-2.jpeg');
+    background-position: bottom center;
+    background-attachment: fixed;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .box-overley {
+    /* padding-top: -10%; */
+  }
+  .title-header {
+    font-size: 40px !important;
   }
 }
 .fh5co-cover .display-t,
 .fh5co-cover .display-tc {
-  height: 900px;
+  /* height: 100vh; */
   display: table;
   width: 100%;
 }
 @media screen and (max-width: 768px) {
   .fh5co-cover .display-t,
   .fh5co-cover .display-tc {
-    height: 600px;
+    /* height: 600px; */
   }
 }
 .fh5co-cover.fh5co-cover-sm {
@@ -360,7 +392,7 @@ h1, h2, h3, h4, h5, h6, figure {
 
 #fh5co-counter,
 #fh5co-event {
-  height: 850px;
+  height: 690px;
   float: left;
 }
 #fh5co-counter .display-t,
@@ -833,7 +865,7 @@ form label {
   font-size: 100px;
   line-height: 1.5;
   font-family: "Great Vibes", Arial, serif;
-  text-shadow: 4px 3px 4px #aaa;
+  text-shadow: 4px 3px 4px rgb(71, 71, 71);
 }
 @media screen and (max-width: 768px) {
   #fh5co-header .display-tc h1,
@@ -1004,14 +1036,8 @@ form label {
   }
 }
 
-@media screen and (max-width: 768px) {
-  #fh5co-couple {
-    padding: 20em 0 3em 0;
-  }
-}
-
 .fh5co-section-gray {
-  background: rgba(0, 0, 0, 0.04);
+  background: #eee !important;
 }
 
 .couple-wrap {
@@ -1021,6 +1047,8 @@ form label {
 }
 @media screen and (max-width: 768px) {
   .couple-wrap {
+    border-top: 1px solid #eee;
+    padding-top: 22px;
     width: 100%;
   }
 }
@@ -1835,7 +1863,40 @@ form label {
 }
 
 .poem-love {
-  font-family: 'Playball', Courier, monospace;
+  font-family: 'Playball', monospace;
   font-size: 20px;
+}
+
+.event-time {
+  font-weight: bold;
+}
+
+.event-address {
+  font-style: italic;
+}
+
+.couple-date, .love-days {
+  font-family: 'Dosis', monospace;
+  font-size: 20px !important;
+  line-height: 0.5 !important;
+}
+
+.days-of-love {
+  margin-bottom: 7px;
+}
+
+.poem-love-shadow {
+  /* text-shadow: 5px 5px 5px rgb(71, 71, 71); */
+  /* text-shadow: 5px 5px 5px #FFF; */
+  text-shadow: 3px 3px 3px #000, 0 0 1em #000, 0 0 0.2em #000;
+}
+
+.btn-invitition {
+  margin-top: 35px;
+  cursor: pointer;
+}
+
+.item-gallery {
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */

@@ -11,19 +11,21 @@
 		<meta name="author" content="Nguyễn Lương Sang" />
 
 		<!-- Facebook and Twitter integration -->
-		<meta property="og:title" content=""/>
-		<meta property="og:image" content=""/>
-		<meta property="og:url" content=""/>
-		<meta property="og:site_name" content=""/>
-		<meta property="og:description" content=""/>
-		<meta name="twitter:title" content="" />
-		<meta name="twitter:image" content="" />
-		<meta name="twitter:url" content="" />
+		<meta property="og:title" content="Sang Trang"/>
+		<meta property="og:url" content="sangtrang.com"/>
+		<meta property="og:site_name" content="sangtrang.com"/>
+		<meta property="og:image" content="images/gallery-7.jpg">
+		<meta property="og:image:type" content="image/png">
+		<meta property="og:description" content="Đám cưới Sang Trang"/>
+
+		<meta name="twitter:title" content="Sang Trang" />
+		<meta name="twitter:image" content="images/gallery-7.jpg" />
+		<meta name="twitter:url" content="sangtrang.com" />
 		<meta name="twitter:card" content="" />
 
 		<link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
 		<link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
-		<link href="https://fonts.googleapis.com/css2?family=Caveat&family=Dancing+Script&family=Great+Vibes&family=Gwendolyn:wght@700&family=MonteCarlo&family=Playball&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Caveat&family=Dosis&family=Great+Vibes&family=Gwendolyn:wght@700&family=Playball&display=swap" rel="stylesheet">
 		
 		<!-- Bootstrap-icons-->
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
@@ -63,6 +65,11 @@
 		<script src="{{ URL::asset('js/jquery.magnific-popup.min.js') }}"></script>
 		<script src="{{ URL::asset('js/magnific-popup-options.js') }}"></script>		
 		<script src="{{ URL::asset('js/simplyCountdown.js') }}"></script>
+
+		<!-- cdnjs -->
+		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>
+		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.plugins.min.js"></script>
+
 		<!-- Main -->
 		<script src="{{ URL::asset('js/main.js') }}"></script>
 

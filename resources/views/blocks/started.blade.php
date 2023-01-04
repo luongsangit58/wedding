@@ -1,4 +1,4 @@
-<div id="fh5co-started" class="fh5co-bg" style="background-image:url(images/img_bg_4.jpg);">
+<div id="fh5co-started" class="fh5co-bg" style="background-image:url(images/img_bg_3.jpg);">
     <div class="overlay"></div>
     <div class="container">
         <div class="row animate-box">

@@ -199,13 +199,12 @@
 
 	// Loading page
 	var loaderPage = function() {
-		$(".fh5co-loader").fadeOut("slow");
+		$(".fh5co-loader").fadeOut(1500);
 	};
 
 	var counter = function() {
 		$('.js-counter').countTo({
 			formatter: function (value, options) {
-				console.log(value);
 				return value.toFixed(options.decimals);
 			},
 		});
@@ -227,6 +226,18 @@
 		$(window).stellar();
 	};
 
+	var lazyLoading = function() {
+		$('.lazy').Lazy({
+			// your configuration goes here
+			scrollDirection: 'vertical',
+			effect: 'fadeIn',
+			visibleOnly: true,
+			onError: function(element) {
+				console.log('error loading ' + element.data('src'));
+			}
+		});
+	};
+
 	$(function(){
 		mobileMenuOutsideClick();
 		parallax();
@@ -241,5 +252,6 @@
 		counter();
 		counterWayPoint();
 		switchNav();
+		lazyLoading();
 	});
 }());

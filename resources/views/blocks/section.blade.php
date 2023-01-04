@@ -1,6 +1,9 @@
-<div class="fh5co-section">
+<div class="fh5co-section fh5co-section-gray">
     <div class="container">
         <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
+                <h2>Lời chúc</h2>
+            </div>
             <div class="col-md-6 col-md-push-6 animate-box">
                 <h3>Gửi lời chúc</h3>
                 <form action="#">

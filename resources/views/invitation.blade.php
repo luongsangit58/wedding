@@ -5,12 +5,8 @@
 	<div id="page">
         @include('blocks.nav')
         @include('blocks.header')
-        @include('blocks.couple')              
         @include('blocks.section')              
-
-        <div id="map" class="fh5co-map"></div>
-        <!-- END map -->
-
+        <!-- <div id="map" class="fh5co-map"></div> -->
         @include('blocks.footer') 
 	</div>  
     @include('blocks.gototop') 
