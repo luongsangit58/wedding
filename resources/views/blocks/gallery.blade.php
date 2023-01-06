@@ -1,4 +1,4 @@
-<div id="fh5co-gallery" class="fh5co-section-gray">
+<div id="fh5co-gallery" class="fh5co-section-gray" data-scroll-top="anh">
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">

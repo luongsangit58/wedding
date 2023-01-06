@@ -18,6 +18,44 @@
 
 	};
 
+	var sentWish = function() {
+		$('.btn-send-wish').click(function (e) {
+			var name = $('#fname').val(),
+				content = $('#message').val();
+			if (name == '' || content == '') {
+				$('.content-wish').text('Bạn hãy nhập đầy đủ Họ tên và Lời chúc gửi đến Sang Trang nhé!');
+				$("#errorWish").modal('show');
+			} else if ($('#message').val().length < 10) {
+				$('.content-wish').text('Lời chúc của bạn dường như hơi ngắn. Hãy nhập lời chúc dài hơn và gửi đến Sang Trang nhé!');
+				$("#errorWish").modal('show');
+			} else if (name != '' && content != '') {
+				$.ajax({
+					type: "GET",
+					contentType: "application/json; charset=utf-8",
+					url: "/wishes/insert",
+					data: { 
+						'name': name, 
+						'content': content
+					},
+					success: function (result) {
+						if (result.error == '0') {
+							$('#fname').val('');
+							$('#message').val('');
+	
+							$('.content-wish').text('"'+ content + '"');
+							$('.sender-name').text('- '+ name + ' -');
+
+							$("#showWish").modal('show');
+						}
+					}
+			   });
+			} else {
+				$('.content-wish').text('Đã có lỗi xảy ra :(');
+				$("#errorWish").modal('show');
+			}
+		});
+	};
+
 
 	var offcanvasMenu = function() {
 
@@ -52,7 +90,6 @@
 
 
 		$(window).resize(function(){
-
 			if ( $('body').hasClass('offcanvas') ) {
 
     			$('body').removeClass('offcanvas');
@@ -184,9 +221,15 @@
 
 	var switchNav = function() {
 		var pathname = window.location.pathname.replace('/', '');
+		if (pathname == '') {
+			$('ul.nav-header li:first-child').addClass('active');
+		}
 		if (pathname != '' && $('ul.nav-header li').hasClass(pathname)) {
-			$('ul.nav-header li').removeClass('active');
 			$('.'+pathname).addClass('active');
+			
+			$([document.documentElement, document.body]).animate({
+				scrollTop: $('div [data-scroll-top="'+pathname+'"]').offset().top
+			}, 2000);
 		}
 	};
 
@@ -253,5 +296,6 @@
 		counterWayPoint();
 		switchNav();
 		lazyLoading();
+		sentWish();
 	});
 }());

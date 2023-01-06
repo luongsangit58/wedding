@@ -1,4 +1,4 @@
-<div id="fh5co-couple-story">
+<div id="fh5co-couple-story" data-scroll-top="chuyen-tinh">
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">

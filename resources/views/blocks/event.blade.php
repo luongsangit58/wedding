@@ -20,11 +20,17 @@
                                 <h3>Lễ Nạp Tài</h3>
                                 <div class="event-time">
                                     <i class="bi bi-calendar-event-fill"></i>
-                                    <span>09:00 Thứ 5, 23/02/2023</span>
-                                    <span>Ngày 04 tháng 02 năm Quý Mão</span>
-                                </div><br/>
-                                <p class="event-address">Tại: Gia đình nhà Gái</p>
-                                <span>131 đường Trần Hưng Đạo<br/>Thị xã Bỉm sơn - Thanh Hoá</span>
+                                    <span><strong>09:00 Thứ 5, 23/02/2023</strong></span>
+                                    <span><strong>(Ngày 04 tháng 02 năm Quý Mão)</strong></span>
+                                </div>
+                                <br/>
+                                <div class="event-localtion">
+                                    <i class="bi bi-house-fill"></i>
+                                    <span>Tại: Gia đình nhà Gái</span>
+                                    <br/>
+                                    <i class="bi bi-geo-alt-fill"></i>
+                                    <span>131 đường Trần Hưng Đạo<br/>Thị xã Bỉm Sơn - Thanh Hoá</span>
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-6 text-center">
@@ -32,12 +38,17 @@
                                 <h3>Lễ Thành Hôn</h3>
                                 <div class="event-time">
                                     <i class="bi bi-calendar-event-fill"></i>
-                                    <span>10:00 Thứ 7, 25/02/2023</span>
-                                    <span>Ngày 06 tháng 02 năm Quý Mão</span>
+                                    <span><strong>10:00 Thứ 7, 25/02/2023</strong></span>
+                                    <span><strong>(Ngày 06 tháng 02 năm Quý Mão)</strong></span>
                                 </div>
                                 <br/>
-                                <p class="event-address">Tại: Khu Ẩm Thực Sinh Thái Hoàng Gia 2</p>
-                                <span>Khu 3 - Phường Phú Sơn<br/>Thị xã Bỉm sơn - Thanh Hoá</span>
+                                <div class="event-localtion">
+                                    <i class="bi bi-house-fill"></i>
+                                    <span>Tại: Khu Ẩm Thực Sinh Thái Hoàng Gia 1</span>
+                                    <br/>
+                                    <i class="bi bi-geo-alt-fill"></i>
+                                    <span>Trần Phú - Phường Lam Sơn<br/>Thị xã Bỉm Sơn - Thanh Hoá</span>
+                                </div>
                             </div>
                         </div>
                     </div>

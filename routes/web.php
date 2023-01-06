@@ -13,18 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'App\Http\Controllers\InvitationController@index');
-
-// Route::get('/', function () {
-//     return view('index');
-// });
+Route::get('/', 'App\Http\Controllers\WishesController@index');
+Route::get('/loi-chuc', 'App\Http\Controllers\WishesController@getWishes');
+Route::get('/wishes/insert', 'App\Http\Controllers\WishesController@insertWishes');
 
 Route::get('/anh', ['as'=>'anh', function() {
     return view('gallery');
 }]);
 
 Route::get('/gui-loi-chuc', function () {
-    return view('invitation');
+    return view('wishes');
 });
 
 Route::get('/chuyen-tinh', function () {
@@ -32,5 +30,6 @@ Route::get('/chuyen-tinh', function () {
 });
 
 Route::get('/thiep-moi', function () {
-    return view('card');
+    return redirect('/');
 });
+Route::get('/thiep-moi/{key}', 'App\Http\Controllers\InvitationController@index');

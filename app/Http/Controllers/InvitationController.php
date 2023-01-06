@@ -11,21 +11,12 @@ class InvitationController extends Controller
 
     }
 
-    public function index() {
-        $invitations = DB::table('loi_chuc')->select('id', 'name', 'key', 'invitation')->get()->toArray();
-        shuffle($invitations);
-        $data = array_slice($invitations, 0, 3);
-
-        return view('index')->with('invitations', $data);
-    }
-
-    // GET
-    public function getInvitation() {
-        return '123';
-    }
-
-    // POST
-    public function addInvitation() {
-
+    public function index($key) {
+        $invitation = DB::table('thiep_moi')->where('key', $key)->first();
+        if ($invitation) {
+            return view('invitation')->with('invitation', $invitation);
+        } else {
+            return redirect('/');
+        }
     }
 }

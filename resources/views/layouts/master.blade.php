@@ -11,19 +11,21 @@
 		<meta name="author" content="Nguyễn Lương Sang" />
 
 		<!-- Facebook and Twitter integration -->
+		<meta property="og:locale" content="vn_VN" />
+		<meta property="og:type" content="article" />
 		<meta property="og:title" content="Sang Trang"/>
 		<meta property="og:url" content="sangtrang.com"/>
 		<meta property="og:site_name" content="sangtrang.com"/>
-		<meta property="og:image" content="images/gallery-7.jpg">
+		<meta property="og:image" content="{{ URL::asset('images/cta-1.jpg') }}">
 		<meta property="og:image:type" content="image/png">
 		<meta property="og:description" content="Đám cưới Sang Trang"/>
 
 		<meta name="twitter:title" content="Sang Trang" />
-		<meta name="twitter:image" content="images/gallery-7.jpg" />
+		<meta name="twitter:image" content="{{ URL::asset('images/cta-1.jpg') }}" />
 		<meta name="twitter:url" content="sangtrang.com" />
 		<meta name="twitter:card" content="" />
 
-		<link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+		<link rel="shortcut icon" type="image/png" href="{{ URL::asset('images/favicon.png') }}"/>
 		<link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
 		<link href="https://fonts.googleapis.com/css2?family=Caveat&family=Dosis&family=Great+Vibes&family=Gwendolyn:wght@700&family=Playball&display=swap" rel="stylesheet">
 		
@@ -40,7 +42,6 @@
 		<link rel="stylesheet" href="{{ URL::asset('css/owl.theme.default.min.css') }}" />
 		<!-- Theme style  -->
 		<link rel="stylesheet" href="{{ URL::asset('css/style.css') }}" />
-
 		<!-- Modernizr JS -->
 		<script src="{{ URL::asset('js/modernizr-2.6.2.min.js') }}"></script>
 	</head>
@@ -72,24 +73,6 @@
 
 		<!-- Main -->
 		<script src="{{ URL::asset('js/main.js') }}"></script>
-
-		<script>
-			var d = new Date(new Date().getTime() + 200 * 120 * 120 * 2000);
-
-			// default example
-			simplyCountdown('.simply-countdown-one', {
-				year: d.getFullYear(),
-				month: d.getMonth() + 1,
-				day: d.getDate()
-			});
-
-			//jQuery example
-			$('#simply-countdown-losange').simplyCountdown({
-				year: d.getFullYear(),
-				month: d.getMonth() + 1,
-				day: d.getDate(),
-				enableUtc: false
-			});
-		</script>
+		<script src="{{ URL::asset('js/slider.js') }}"></script>
 	</body>
 </html>

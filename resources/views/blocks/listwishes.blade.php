@@ -11,13 +11,13 @@
                 <div class="col-md-12 animate-box">
                     <div class="wrap-testimony">
                         <div class="owl-carousel-fullwidth">
-                            @foreach ($invitations as $invitation)
+                            @foreach ($wishes as $wish)
                             <div class="item">
                                 <div class="testimony-slide active text-center">
                                     <blockquote>
-                                        <p>"{{ $invitation->invitation }}"</p>
+                                        <p>"{{ $wish->content }}"</p>
                                     </blockquote>
-                                    <span>- {{ $invitation->name }} -</span>
+                                    <span>- {{ $wish->name }} -</span>
                                 </div>
                             </div>
                             @endforeach
