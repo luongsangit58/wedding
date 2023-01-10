@@ -17,6 +17,7 @@
                                         <p>"{{ $wish->content }}"</p>
                                     </blockquote>
                                     <span>- {{ $wish->name }} -</span>
+                                    <i>[{{ $wish->email }}]</i>
                                 </div>
                             </div>
                             @endforeach

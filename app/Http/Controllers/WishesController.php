@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Mail;
+use App\Mail\DemoMail;
 
 class WishesController extends Controller
 {
@@ -17,16 +19,16 @@ class WishesController extends Controller
         'cẩu', 'cặc', 'chó', 'cứt', 'cút', 'cu', 'câm', 'cắn', 'chết', 'chêt', 'chet', 'chít', 'ckó', 'cc', 'cl', 'ckim', 'chém', 'cave', 'chịch', 'cưt',
         'dở', 'dâm', 'dm', 'dái', 'dkm',
         'đụ', 'địt', 'đéo', 'đĩ', 'đực', 'đm', 'đmm', 'đcmm', 'đcm', 'đkm', 'đ!t', 'đ.ị.t', 'đị.t', 'đ.ịt', 'đái', 'điếm', 'đít', 'đit', 'đớp',
-	'ẻ', 'ể',
-	'giết',
+	    'ẻ', 'ể',
+	    'giết',
         'ỉa', 'ĩa',
-	'hãm', 'hiếp', 'hốc',
-	'kứt', 'ku', 'kưt',
-	'mu', 'máu',
-	'ngu',
+        'hãm', 'hiếp', 'hốc',
+        'kứt', 'ku', 'kưt',
+        'mu', 'máu',
+	    'ngu',
         'lồn', 'liếm', 'lìn', 'lol', 'lòn',
         'sít', 'sủa',
-	'tè', 'trym', 'trim', 'tử',
+	    'tè', 'trym', 'trim', 'tử',
         'xủa', 'xl', 'xaolol', 'xaolon', 'xamlol', 'xamlon',
         'vãi', 'vl', 'vc', 'vcc', 'vcl', 'vailon', 'vailol', 'v.c.l', 'v.c',
         'arse', 'arsehead', 'arsehole', 'ass', 'asshold',
@@ -46,17 +48,25 @@ class WishesController extends Controller
     ];
 
     public function index() {
-        $wishes = DB::table('loi_chuc')->select('id', 'name', 'key', 'content')->get()->toArray();
+        $wishes = DB::table('loi_chuc')->select('id', 'name', 'key', 'content', 'email')->get()->toArray();
         shuffle($wishes);
         $data = array_slice($wishes, 0, 6);
+
+        foreach ($data as $key => $value) {
+            $value->email = $this->obfuscateEmail($value->email);
+        }
 
         return view('index')->with('wishes', $data);
     }
 
     // Get
     public function getWishes() {
-        $wishes = DB::table('loi_chuc')->select('id', 'name', 'key', 'content')->get()->toArray();
+        $wishes = DB::table('loi_chuc')->select('id', 'name', 'key', 'content', 'email')->get()->toArray();
         shuffle($wishes);
+
+        foreach ($wishes as $key => $value) {
+            $value->email = $this->obfuscateEmail($value->email);
+        }
 
         return view('wisheslist')->with('wishes', $wishes);
     }
@@ -71,14 +81,27 @@ class WishesController extends Controller
                 'data' => $checkBadWords['text']
             ]);
         }
+
+        $key = $this->genUid(6);
         
         $id = DB::table('loi_chuc')->insertGetId(
             [
                 'name' => $request->name, 
-                'key' => $this->genUid(6),
-                'content' => $request->content
+                'key' => $key,
+                'content' => $request->content,
+                'email' => $request->email
             ]
         );
+
+        if ($id) {
+            $mailData = [
+                'name' => $request->name,
+                'content' => $request->content
+            ];
+             
+            Mail::to($request->email)->send(new DemoMail($mailData));
+        }
+
         return response()->json([
             'error' => 0,
             'data' => $id
@@ -110,5 +133,18 @@ class WishesController extends Controller
             'error' => 0,
             'text' => $text
         ];
+    }
+
+    public function obfuscateEmail($email)
+    {   
+        if ($email == '') {
+            return '';
+        }
+
+        $em   = explode("@",$email);
+        $name = implode('@', array_slice($em, 0, count($em)-1));
+        $len  = floor(strlen($name)/2);
+    
+        return substr($name, 0, $len) . str_repeat('*', $len) . "@" . end($em);   
     }
 }

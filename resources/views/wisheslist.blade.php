@@ -21,6 +21,7 @@
                 </div>
                 <div class="blog-slider__content">
                     <div class="blog-slider__title">{{ $wish->name }}</div>
+                    <span><i>[{{ $wish->email }}]</i></span>
                     <div class="blog-slider__text">"{{ $wish->content }}"</div>
                 </div>
             </div>

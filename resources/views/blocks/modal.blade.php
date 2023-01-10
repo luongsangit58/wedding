@@ -10,12 +10,14 @@
                 <div class="item">
                     <div class="testimony-slide active text-center">
                         <p class="content-wish">"Chúc mừng hạnh phúc 2 em. Vợ chồng đầu bạc răng long em nhé!"</p>
-                        <span class="sender-name">- Đặng Lê Nguyên Vũ -</span>
+                        <br>
+                        <strong><p class="sender-name">- Đặng Lê Nguyên Vũ -</p></strong>
+                        <p><i class="sender-email">[danglenguyenvu@gmail.com]</i></p>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
-                <p class="text-center">Xin chân thành cảm ơn!</p>
+                <p class="text-center">Thư cảm ơn đã được gửi đến email của bạn!</p>
             </div>
         </div>
     </div>
@@ -28,7 +30,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title text-center">Khoan ~ Dừng khoảng chừng là 2 giây!</h4>
+                <h4 class="modal-title text-center">Khoan. Dừng khoảng chừng là 2 giây!</h4>
             </div>
             <div class="owl-item modal-body">
                 <div class="item">

@@ -15,8 +15,15 @@
                     <br/>
                     <div class="row form-group">
                         <div class="col-md-12">
+                            <h3 class="send-wish-box-title">Email của bạn</h3>
+                            <input type="text" id="email" class="form-control" placeholder="Email của bạn">
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="row form-group">
+                        <div class="col-md-12">
                             <h3 class="send-wish-box-title">Lời chúc</h3>
-                            <textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Hãy gửi đến Sang Trang những lời chúc thân thương nhất!"></textarea>
+                            <textarea name="message" id="message" cols="30" rows="6" class="form-control" placeholder="Hãy gửi đến Sang Trang những lời chúc thân thương nhất!"></textarea>
                         </div>
                     </div>
                     <div class="form-group text-center">

@@ -21,9 +21,10 @@
 	var sentWish = function() {
 		$('.btn-send-wish').click(function (e) {
 			var name = $('#fname').val(),
+				email = $('#email').val(),
 				content = $('#message').val();
-			if (name == '' || content == '') {
-				$('.content-wish').text('Bạn hãy nhập đầy đủ Họ tên và Lời chúc gửi đến Sang Trang nhé!');
+			if (name == '' || email == '' || content == '') {
+				$('.content-wish').text('Bạn hãy nhập đầy đủ Tên, Email và Lời chúc gửi đến Sang Trang nhé!');
 				$("#errorWish").modal('show');
 			} else if ($('#message').val().length < 10) {
 				$('.content-wish').text('Lời chúc của bạn dường như hơi ngắn. Hãy nhập lời chúc dài hơn và gửi đến Sang Trang nhé!');
@@ -35,15 +36,18 @@
 					url: "/wishes/insert",
 					data: { 
 						'name': name, 
+						'email': email, 
 						'content': content
 					},
 					success: function (result) {
 						if (result.error == '0') {
 							$('#fname').val('');
+							$('#email').val('');
 							$('#message').val('');
 	
 							$('.content-wish').text('"'+ content + '"');
 							$('.sender-name').text('- '+ name + ' -');
+							$('.sender-email').text('['+ obfuscateEmail(email) + ']');
 
 							$("#showWish").modal('show');
 						} else {
@@ -287,6 +291,16 @@
 				console.log('error loading ' + element.data('src'));
 			}
 		});
+	};
+
+	var obfuscateEmail = function(user_email) {
+		var avg, splitted, part1, part2;
+		splitted = user_email.split("@");
+		part1 = splitted[0];
+		avg = part1.length / 2;
+		part1 = part1.substring(0, (part1.length - avg));
+		part2 = splitted[1];
+		return part1 + "****@" + part2;
 	};
 
 	$(function(){
