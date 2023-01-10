@@ -1,4 +1,4 @@
-<div id="fh5co-gallery" class="fh5co-section-gray" data-scroll-top="anh">
+<div id="fh5co-gallery" class="fh5co-bg-bottom lazy" data-src="https://img.freepik.com/free-photo/blank-elegant-floral-frame-design_53876-128149.jpg?w=1380" data-scroll-top="anh">
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">

@@ -2,38 +2,27 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-                <h2>Lời chúc</h2>
+                <h2>Gửi lời chúc</h2>
             </div>
-            <div class="col-md-6 col-md-push-6 animate-box box-sent-wish">
-                <h3 class="send-wish-box-title">Gửi lời chúc</h3>
-                <form action="#">
+            <div class="col-md-6 col-md-offset-3 animate-box box-sent-wish">
+                <form>
                     <div class="row form-group">
                         <div class="col-md-12">
-                            <label for="fname">Họ tên</label>
-                            <input type="text" id="fname" class="form-control" placeholder="Họ tên">
+                            <h3 class="send-wish-box-title">Tên của bạn</h3>
+                            <input type="text" id="fname" class="form-control" placeholder="Tên của bạn">
                         </div>
                     </div>
-
+                    <br/>
                     <div class="row form-group">
                         <div class="col-md-12">
-                            <label for="message">Lời chúc</label>
+                            <h3 class="send-wish-box-title">Lời chúc</h3>
                             <textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Hãy gửi đến Sang Trang những lời chúc thân thương nhất!"></textarea>
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group text-center">
                         <input type="button" value="Gửi" class="btn btn-primary btn-send-wish">
                     </div>
                 </form>		
-            </div>
-            <div class="col-md-5 col-md-pull-5 animate-box box-info-wish">
-                <div class="fh5co-contact-info">
-                    <h3 class="send-wish-box-title">Thông tin liên hệ</h3>
-                    <ul>
-                        <li class="address"><i class="bi bi-geo-alt-fill"></i> Cầu Giấy, Hà Nội</li>
-                        <li class="phone"><i class="bi bi-telephone-fill"></i> <a href="tel://1234567920">0961.191.464</a></li>
-                        <li class="email"><i class="bi bi-envelope-fill"></i> <a href="mailto:luongsangit58@gmail.com">luongsangit58@gmail.com</a></li>
-                    </ul>
-                </div>
             </div>
         </div>
     </div>

@@ -8,11 +8,11 @@
                 <p class="card-invitation-name">Lương Sang  <i class="bi bi-suit-heart-fill"></i>  Hà Trang</p>
                 <p>
                     Hôn lễ được tổ chức vào hồi<br/>
-                    <strong>10:00 Thứ 7, 25/02/2023<br/>
+                    <strong>10:30 Thứ 7, 25/02/2023<br/>
                     (06 tháng 02 năm Quý Mão)</strong>
                 </p>
                 <p>
-                    <p><i>Tại: Khu Ẩm Thực Sinh Thái Hoàng Gia 1</i></p>
+                    <p><i>Tại: Khu ẩm thực sinh thái Hoàng Gia 1</i></p>
                     <span>Trần Phú, phường Lam Sơn, thị xã Bỉm Sơn, tỉnh Thanh Hoá</span>
                 </p>
                 <a href="/gui-loi-chuc" class="btn btn-primary">Gửi lời chúc</a>

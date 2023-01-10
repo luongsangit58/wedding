@@ -4,6 +4,7 @@
             <div class="col-md-12 text-center">
                 <p>
                     <small class="block">&copy; Nguyễn Lương Sang</small> 
+                    <a href="tel://0961191464"><small class="block">0961.191.464</small></a>
                 </p>
                 <p>
                     <ul class="fh5co-social-icons">

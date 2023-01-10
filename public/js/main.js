@@ -46,6 +46,9 @@
 							$('.sender-name').text('- '+ name + ' -');
 
 							$("#showWish").modal('show');
+						} else {
+							$('.content-wish').text('Nội dung bạn nhập có chứa từ "' + result.data + '" chưa đúng chuẩn mực, nhạy cảm và không phù hợp!');
+							$("#errorWish").modal('show');
 						}
 					}
 			   });
@@ -223,13 +226,18 @@
 		var pathname = window.location.pathname.replace('/', '');
 		if (pathname == '') {
 			$('ul.nav-header li:first-child').addClass('active');
+			window.onbeforeunload = function () {
+				window.scrollTo(0,0);
+			};
 		}
 		if (pathname != '' && $('ul.nav-header li').hasClass(pathname)) {
 			$('.'+pathname).addClass('active');
 			
-			$([document.documentElement, document.body]).animate({
-				scrollTop: $('div [data-scroll-top="'+pathname+'"]').offset().top
-			}, 2000);
+			if (pathname != 'loi-chuc') {
+				$([document.documentElement, document.body]).animate({
+					scrollTop: $('div [data-scroll-top="'+pathname+'"]').offset().top
+				}, 1500);
+			}
 		}
 	};
 

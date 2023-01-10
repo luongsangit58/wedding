@@ -1,4 +1,4 @@
-<div id="fh5co-couple">
+<div id="fh5co-couple" class="fh5co-bg lazy" data-src="https://images.rawpixel.com/image_1000/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcm00MjgtMDAzMGFfMi5qcGc.jpg">
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
@@ -18,7 +18,7 @@
                 <div class="desc-groom">
                     <h3>Lương Sang</h3>
                     <p>Chú rể</p>
-                    <p>1997</p>
+                    <p>Song Tử</p>
                 </div>
             </div>
             <p class="heart text-center"><i class="bi bi-suit-heart-fill"></i></p>
@@ -29,7 +29,7 @@
                 <div class="desc-bride">
                     <h3>Hà Trang</h3>
                     <p>Cô dâu</p>
-                    <p>1997</p>
+                    <p>Bọ Cạp</p>
                 </div>
             </div>
         </div>

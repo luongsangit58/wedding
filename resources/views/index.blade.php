@@ -7,14 +7,13 @@
         @include('blocks.header')
         @include('blocks.couple')
         @include('blocks.event')    
-        @include('blocks.listwishes')    
         @include('blocks.story')    
+        @include('blocks.listwishes')    
         @include('blocks.gallery')    
-        @include('blocks.sendwish') 
-        @include('blocks.modal')    
-        <!-- @include('blocks.services')     -->
-        <!-- @include('blocks.started')     -->
+        @include('blocks.map')  
+        @include('blocks.sendwish')  
         @include('blocks.footer') 
+        @include('blocks.modal') 
 	</div>  
     @include('blocks.gototop') 
 @endsection
