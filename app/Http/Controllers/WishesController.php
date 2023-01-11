@@ -87,6 +87,15 @@ class WishesController extends Controller
         ]);
     }
 
+    // Delete wish
+    public function deleteWishByEmail($email) {
+        DB::table('loi_chuc')->where('email', $email)->delete();
+        return response()->json([
+            'error' => 0, // Loi check bad words
+            'message' => 'Deleted wish by email '.$email
+        ]);
+    }
+
     // Insert
     public function insertWishes(Request $request) {
         // check bad words namẻ
