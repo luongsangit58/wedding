@@ -35,4 +35,5 @@
 </div>
 <!-- Slider -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js"></script>
+<script src="{{ URL::asset('js/slider.js') }}"></script>
 @endsection

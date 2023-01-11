@@ -108,27 +108,44 @@ class WishesController extends Controller
         }
 
         $key = $this->genUid(6);
-        $id = DB::table('loi_chuc')->insertGetId(
-            [
-                'name' => $request->name, 
-                'key' => $key,
-                'content' => $request->content,
-                'email' => $request->email
-            ]
-        );
+        try {
+            $id = DB::table('loi_chuc')->insertGetId(
+                [
+                    'name' => $request->name, 
+                    'key' => $key,
+                    'content' => $request->content,
+                    'email' => $request->email
+                ]
+            );
 
-        if ($id) {
-            $mailData = [
-                'name' => $request->name,
-                'content' => $request->content,
-                'key' => $key
-            ];
-             
-            Mail::to($request->email)->send(new DemoMail($mailData));
-
+            if ($id) {
+                $mailData = [
+                    'name' => $request->name,
+                    'content' => $request->content,
+                    'key' => $key
+                ];
+                 
+                try {
+                    Mail::to($request->email)->send(new DemoMail($mailData));
+                    $affected = DB::table('loi_chuc')->where('id', $id)->update(['sent_email' => 1]);
+                } catch (\Exception $e) {
+                    $mailData = [
+                        'name' => '['.$request->email.'] '.$request->name,
+                        'content' => $request->content,
+                        'key' => $key
+                    ];
+                    Mail::to('luongsangit58@gmail.com')->send(new DemoMail($mailData));
+                }
+                
+                return response()->json([
+                    'error' => 0,
+                    'data' => $id
+                ]);
+            }
+        } catch (\Exception $e) {
             return response()->json([
-                'error' => 0,
-                'data' => $id
+                'error' => 500,
+                'data' => 'Đã có lỗi xảy ra :('
             ]);
         }
 

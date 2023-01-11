@@ -73,6 +73,5 @@
 
 		<!-- Main -->
 		<script src="{{ URL::asset('js/main.js') }}"></script>
-		<script src="{{ URL::asset('js/slider.js') }}"></script>
 	</body>
 </html>

@@ -50,9 +50,9 @@
 							$('#email').val('');
 							$('#message').val('');
 	
-							$('.content-wish').text('"' + content + '"');
+							$('.content-wish').text('"' + $.trim(content) + '"');
 							$('.sender-name').text('- ' + name + ' -');
-							$('.sender-email').text('[' + email + ']');
+							$('.sender-email').text(email);
 
 							$("#showWish").modal('show');
 						} else if (result.error == '1' || result.error == '2') {

@@ -4,20 +4,19 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title text-center">Lời chúc đã được gửi đến Sang Trang</h4>
+                <h4 class="modal-title text-center">Sang Trang đã nhận được lời chúc của bạn!</h4>
             </div>
             <div class="owl-item modal-body">
                 <div class="item">
                     <div class="testimony-slide active text-center">
                         <p class="content-wish">"Chúc mừng hạnh phúc 2 em. Vợ chồng đầu bạc răng long em nhé!"</p>
-                        <br>
                         <strong><p class="sender-name">- Đặng Lê Nguyên Vũ -</p></strong>
-                        <p><i class="sender-email">[danglenguyenvu@gmail.com]</i></p>
+                        <p></p>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
-                <p class="text-center">Thư cảm ơn đã được gửi đến email của bạn!</p>
+                <p class="text-center" style="color: #000;">Thư cảm ơn và Mã số may mắn sẽ được gửi đến<br/>email <span class="sender-email">danglenguyenvu@gmail.com</span> trong thời gian sớm nhất!</p>
             </div>
         </div>
     </div>

@@ -30,7 +30,7 @@ class DemoMail extends Mailable
      */
     public function build()
     {
-        return $this->subject('Mail from SangTrang.com')
+        return $this->subject('sangtrang.com')
                     ->view('emails.thanks');
     }
 }
