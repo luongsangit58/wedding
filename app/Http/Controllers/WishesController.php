@@ -78,6 +78,15 @@ class WishesController extends Controller
         return $wish;
     }
 
+    // Update sent email
+    public function updateSentEmail($email) {
+        $affected = DB::table('loi_chuc')->where('email', $email)->update(['sent_email' => 1]);
+        return response()->json([
+            'error' => 0, // Loi check bad words
+            'message' => 'update email'
+        ]);
+    }
+
     // Insert
     public function insertWishes(Request $request) {
         // check bad words name

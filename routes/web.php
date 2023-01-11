@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'App\Http\Controllers\WishesController@index');
 Route::get('/loi-chuc', 'App\Http\Controllers\WishesController@getWishes');
 Route::get('/wishes/insert', 'App\Http\Controllers\WishesController@insertWishes');
+Route::get('/wishes/update-sent-email/{email}', 'App\Http\Controllers\WishesController@updateSentEmail');
 
 Route::get('/anh', ['as'=>'anh', function() {
     return view('gallery');

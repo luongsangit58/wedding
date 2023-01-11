@@ -13,7 +13,7 @@
                 <blockquote class="blockquote">
                     <p class="mb-0">"{{ $mailData['content'] }}"</p>
                   </blockquote>
-                <p>Sang Trang sẽ trao đến 2 người may mắn nhất trong danh những bạn đã gửi lời chúc dựa theo <strong>Mã số may mắn</strong> bằng hình thức quay ngẫu nhiên vào ngày tổ chức hôn lễ 25/02/2022 (Ngày 6 tháng 2 năm Quý Mão).</p>
+                <p>Sang Trang sẽ trao đến 2 người may mắn nhất trong danh những bạn đã gửi lời chúc dựa theo <strong>Mã số may mắn</strong> bằng hình thức quay ngẫu nhiên vào ngày tổ chức hôn lễ 25/02/2023 (Ngày 6 tháng 2 năm Quý Mão).</p>
                 <div class="text-center">
                     <p>Mã số may mắn của bạn là: <strong>{{ $mailData['key'] }}</strong></p>
                 </div>
