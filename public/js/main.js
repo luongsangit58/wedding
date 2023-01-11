@@ -55,10 +55,10 @@
 							$('.sender-email').text('[' + email + ']');
 
 							$("#showWish").modal('show');
-						} else if (result.error == '1') {
+						} else if (result.error == '1' || result.error == '2') {
 							$('.content-wish').text('Nội dung bạn nhập có chứa từ "' + result.data + '" chưa đúng chuẩn mực, nhạy cảm và không phù hợp!');
 							$("#errorWish").modal('show');
-						} else if (result.error == '2') {
+						} else if (result.error == '3') {
 							$('.content-wish').text('Email '+ result.data +' đã từng được sử dụng để gửi lời chúc. Vui lòng nhập email khác!');
 							$("#errorWish").modal('show');
 						} else {

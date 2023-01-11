@@ -81,20 +81,20 @@ class WishesController extends Controller
     // Insert
     public function insertWishes(Request $request) {
         // check bad words name
-        $checkBadWords = $this->checkBadWords($request->name);
-        if ($checkBadWords['error'] != 0) {
+        $checkBadWordName = $this->checkBadWords($request->name);
+        if ($checkBadWordName['error'] != 0) {
             return response()->json([
-                'error' => 2, // Loi check bad words
-                'data' => $checkBadWords['text']
+                'error' => 1, // Loi check bad words
+                'data' => $checkBadWordName['text']
             ]);
         }
 
         // check bad words content
-        $checkBadWords = $this->checkBadWords($request->content);
-        if ($checkBadWords['error'] != 0) {
+        $checkBadWordEmail = $this->checkBadWords($request->content);
+        if ($checkBadWordEmail['error'] != 0) {
             return response()->json([
-                'error' => 1, // Loi check bad words
-                'data' => $checkBadWords['text']
+                'error' => 2, // Loi check bad words
+                'data' => $checkBadWordEmail['text']
             ]);
         }
 
@@ -102,7 +102,7 @@ class WishesController extends Controller
         $wishByEmail = $this->getWishByEmail($request->email);
         if ($wishByEmail) {
             return response()->json([
-                'error' => 2, // Loi trung email
+                'error' => 3, // Loi trung email
                 'data' => $wishByEmail->email
             ]);
         }
@@ -120,7 +120,8 @@ class WishesController extends Controller
         if ($id) {
             $mailData = [
                 'name' => $request->name,
-                'content' => $request->content
+                'content' => $request->content,
+                'key' => $key
             ];
              
             Mail::to($request->email)->send(new DemoMail($mailData));
