@@ -13,7 +13,7 @@
             <div class="col-md-12 col-md-offset-0">
                 <ul class="timeline animate-box">
 		            <li class="animate-box">
-                        <div class="timeline-badge lazy" data-src="images/story/ky-yeu-cap-3.jpg"></div>
+                        <div class="timeline-badge lazy" data-src="images/story/loi-yeu-dau.jpg"></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h3 class="timeline-title">Lời yêu đầu</h3>
