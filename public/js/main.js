@@ -23,8 +23,12 @@
 			var name = $('#fname').val(),
 				email = $('#email').val(),
 				content = $('#message').val();
+			var wishEmailCache = localStorage.getItem("wish_email");
 			if (name == '' || email == '' || content == '') {
 				$('.content-wish').text('Bạn hãy nhập đầy đủ Tên, Email và Lời chúc gửi đến Sang Trang nhé!');
+				$("#errorWish").modal('show');
+			} else if (wishEmailCache == email) {
+				$('.content-wish').text('Email '+wishEmailCache+' đã từng được sử dụng để gửi lời chúc. Vui lòng nhập email khác!');
 				$("#errorWish").modal('show');
 			} else if ($('#message').val().length < 10) {
 				$('.content-wish').text('Lời chúc của bạn dường như hơi ngắn. Hãy nhập lời chúc dài hơn và gửi đến Sang Trang nhé!');
@@ -41,17 +45,24 @@
 					},
 					success: function (result) {
 						if (result.error == '0') {
+							localStorage.setItem("wish_email", email);
 							$('#fname').val('');
 							$('#email').val('');
 							$('#message').val('');
 	
-							$('.content-wish').text('"'+ content + '"');
-							$('.sender-name').text('- '+ name + ' -');
-							$('.sender-email').text('['+ obfuscateEmail(email) + ']');
+							$('.content-wish').text('"' + content + '"');
+							$('.sender-name').text('- ' + name + ' -');
+							$('.sender-email').text('[' + email + ']');
 
 							$("#showWish").modal('show');
-						} else {
+						} else if (result.error == '1') {
 							$('.content-wish').text('Nội dung bạn nhập có chứa từ "' + result.data + '" chưa đúng chuẩn mực, nhạy cảm và không phù hợp!');
+							$("#errorWish").modal('show');
+						} else if (result.error == '2') {
+							$('.content-wish').text('Email '+ result.data +' đã từng được sử dụng để gửi lời chúc. Vui lòng nhập email khác!');
+							$("#errorWish").modal('show');
+						} else {
+							$('.content-wish').text(result.data);
 							$("#errorWish").modal('show');
 						}
 					}

@@ -59,7 +59,7 @@ class WishesController extends Controller
         return view('index')->with('wishes', $data);
     }
 
-    // Get
+    // Get all
     public function getWishes() {
         $wishes = DB::table('loi_chuc')->select('id', 'name', 'key', 'content', 'email')->get()->toArray();
         shuffle($wishes);
@@ -71,19 +71,43 @@ class WishesController extends Controller
         return view('wisheslist')->with('wishes', $wishes);
     }
 
+    // Get wish by email
+    public function getWishByEmail($email) {
+        $wish = DB::table('loi_chuc')->where('email', $email)->first();
+
+        return $wish;
+    }
+
     // Insert
     public function insertWishes(Request $request) {
-        $checkBadWords = $this->checkBadWords($request->content);
-
+        // check bad words name
+        $checkBadWords = $this->checkBadWords($request->name);
         if ($checkBadWords['error'] != 0) {
             return response()->json([
-                'error' => 1,
+                'error' => 2, // Loi check bad words
                 'data' => $checkBadWords['text']
             ]);
         }
 
+        // check bad words content
+        $checkBadWords = $this->checkBadWords($request->content);
+        if ($checkBadWords['error'] != 0) {
+            return response()->json([
+                'error' => 1, // Loi check bad words
+                'data' => $checkBadWords['text']
+            ]);
+        }
+
+        // trung email
+        $wishByEmail = $this->getWishByEmail($request->email);
+        if ($wishByEmail) {
+            return response()->json([
+                'error' => 2, // Loi trung email
+                'data' => $wishByEmail->email
+            ]);
+        }
+
         $key = $this->genUid(6);
-        
         $id = DB::table('loi_chuc')->insertGetId(
             [
                 'name' => $request->name, 
@@ -100,11 +124,16 @@ class WishesController extends Controller
             ];
              
             Mail::to($request->email)->send(new DemoMail($mailData));
+
+            return response()->json([
+                'error' => 0,
+                'data' => $id
+            ]);
         }
 
         return response()->json([
-            'error' => 0,
-            'data' => $id
+            'error' => 500,
+            'data' => 'Đã có lỗi xảy ra :('
         ]);
     }
 
