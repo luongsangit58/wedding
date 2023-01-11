@@ -32,6 +32,8 @@
 			var wishEmailCache = localStorage.getItem("wish_email");
 			if (name == '' || email == '' || content == '') {
 				showModalError('Bạn hãy nhập đầy đủ Tên, Email và Lời chúc gửi đến Sang Trang nhé!');
+			} else if (intervalButtonSentEmail() == false) {
+				showModalError('Vui lòng gửi lời chúc sau 3 phút kể từ lần gửi trước đó. Xin cảm ơn!');
 			} else if (validateEmail(email) == false) {
 				showModalError('Email bạn nhập chưa đúng định dạng. Vui lòng nhập lại!');
 			} else if (wishEmailCache == email) {
@@ -52,7 +54,6 @@
 						if (result.error == '0') {
 							localStorage.setItem("wish_email", email);
 							localStorage.setItem("wish_sent_email_time", Math.round(+new Date()/1000));
-							intervalButtonSentEmail();
 							
 							$('#fname').val('');
 							$('#email').val('');
@@ -291,19 +292,25 @@
 	};
 	
 	var intervalButtonSentEmail = function() {
-		var timeSentEmail = localStorage.getItem("wish_sent_email_time");
-		$('.btn-send-wish').attr('disabled', true);
+		var timeSentEmail = parseInt(localStorage.getItem("wish_sent_email_time")) ? localStorage.getItem("wish_sent_email_time") : 0;
+		// $('.btn-send-wish').attr('disabled', true);
 
+		if (timeSentEmail == 0) return true;
 		const myInterval = setInterval(checkTimeSentEmail, 1000);
 
 		function checkTimeSentEmail() {
-			console.log(Math.round(+new Date()/1000) - parseInt(timeSentEmail))
-			if (timeSentEmail == null || timeSentEmail == '' || Math.round(+new Date()/1000) - parseInt(timeSentEmail) > 30) {
-				$('.btn-send-wish').attr('disabled', false);
-				console.log('okok');
+			console.log(timeSentEmail)
+			if (Math.round(+new Date()/1000) - parseInt(timeSentEmail) > 3*60) {
+				console.log(3424234)
+				// $('.btn-send-wish').attr('disabled', false);
+				localStorage.removeItem("wish_sent_email_time");
 				clearInterval(myInterval);
+
+				return true;
 			}
 		}
+		
+		return false;
 	};
 
 	var lazyLoading = function() {
@@ -322,7 +329,6 @@
 		if(email === "") {
 			return false;
 		}
-		
 		var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 		
 		return regex.test(email);
