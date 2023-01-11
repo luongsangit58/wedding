@@ -18,22 +18,27 @@
 
 	};
 
+	var showModalError = function(content) {
+		$('.content-wish').text(content);
+		$("#errorWish").modal('show');
+	};
+
 	var sentWish = function() {
 		$('.btn-send-wish').click(function (e) {
+			e.preventDefault();
 			var name = $('#fname').val(),
 				email = $('#email').val(),
 				content = $('#message').val();
 			var wishEmailCache = localStorage.getItem("wish_email");
 			if (name == '' || email == '' || content == '') {
-				$('.content-wish').text('Bạn hãy nhập đầy đủ Tên, Email và Lời chúc gửi đến Sang Trang nhé!');
-				$("#errorWish").modal('show');
+				showModalError('Bạn hãy nhập đầy đủ Tên, Email và Lời chúc gửi đến Sang Trang nhé!');
+			} else if (validateEmail(email) == false) {
+				showModalError('Email bạn nhập chưa đúng định dạng. Vui lòng nhập lại!');
 			} else if (wishEmailCache == email) {
-				$('.content-wish').text('Email '+wishEmailCache+' đã từng được sử dụng để gửi lời chúc. Vui lòng nhập email khác!');
-				$("#errorWish").modal('show');
+				showModalError('Email '+wishEmailCache+' đã từng được sử dụng để gửi lời chúc. Vui lòng nhập email khác!');
 			} else if ($('#message').val().length < 10) {
-				$('.content-wish').text('Lời chúc của bạn dường như hơi ngắn. Hãy nhập lời chúc dài hơn và gửi đến Sang Trang nhé!');
-				$("#errorWish").modal('show');
-			} else if (name != '' && content != '') {
+				showModalError('Lời chúc của bạn dường như hơi ngắn. Hãy nhập lời chúc dài hơn và gửi đến Sang Trang nhé!');
+			} else {
 				$.ajax({
 					type: "GET",
 					contentType: "application/json; charset=utf-8",
@@ -46,6 +51,9 @@
 					success: function (result) {
 						if (result.error == '0') {
 							localStorage.setItem("wish_email", email);
+							localStorage.setItem("wish_sent_email_time", Math.round(+new Date()/1000));
+							intervalButtonSentEmail();
+							
 							$('#fname').val('');
 							$('#email').val('');
 							$('#message').val('');
@@ -55,21 +63,11 @@
 							$('.sender-email').text(email);
 
 							$("#showWish").modal('show');
-						} else if (result.error == '1' || result.error == '2') {
-							$('.content-wish').text('Nội dung bạn nhập có chứa từ "' + result.data + '" chưa đúng chuẩn mực, nhạy cảm và không phù hợp!');
-							$("#errorWish").modal('show');
-						} else if (result.error == '3') {
-							$('.content-wish').text('Email '+ result.data +' đã từng được sử dụng để gửi lời chúc. Vui lòng nhập email khác!');
-							$("#errorWish").modal('show');
 						} else {
-							$('.content-wish').text(result.data);
-							$("#errorWish").modal('show');
+							showModalError(result.data);
 						}
 					}
 			   });
-			} else {
-				$('.content-wish').text('Đã có lỗi xảy ra :(');
-				$("#errorWish").modal('show');
 			}
 		});
 	};
@@ -291,6 +289,22 @@
 	var parallax = function() {
 		$(window).stellar();
 	};
+	
+	var intervalButtonSentEmail = function() {
+		var timeSentEmail = localStorage.getItem("wish_sent_email_time");
+		$('.btn-send-wish').attr('disabled', true);
+
+		const myInterval = setInterval(checkTimeSentEmail, 1000);
+
+		function checkTimeSentEmail() {
+			console.log(Math.round(+new Date()/1000) - parseInt(timeSentEmail))
+			if (timeSentEmail == null || timeSentEmail == '' || Math.round(+new Date()/1000) - parseInt(timeSentEmail) > 30) {
+				$('.btn-send-wish').attr('disabled', false);
+				console.log('okok');
+				clearInterval(myInterval);
+			}
+		}
+	};
 
 	var lazyLoading = function() {
 		$('.lazy').Lazy({
@@ -304,6 +318,16 @@
 		});
 	};
 
+	var validateEmail = function(email) {
+		if(email === "") {
+			return false;
+		}
+		
+		var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+		
+		return regex.test(email);
+	}
+
 	var obfuscateEmail = function(user_email) {
 		var avg, splitted, part1, part2;
 		splitted = user_email.split("@");
@@ -311,6 +335,7 @@
 		avg = part1.length / 2;
 		part1 = part1.substring(0, (part1.length - avg));
 		part2 = splitted[1];
+
 		return part1 + "****@" + part2;
 	};
 

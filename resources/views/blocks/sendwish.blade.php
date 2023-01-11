@@ -17,7 +17,7 @@
                     <div class="row form-group">
                         <div class="col-md-12">
                             <h3 class="send-wish-box-title">Email của bạn</h3>
-                            <input type="text" id="email" class="form-control" placeholder="Email của bạn">
+                            <input type="email" id="email" class="form-control" placeholder="Email của bạn">
                         </div>
                     </div>
                     <br/>

@@ -89,30 +89,39 @@ class WishesController extends Controller
 
     // Insert
     public function insertWishes(Request $request) {
-        // check bad words name
-        $checkBadWordName = $this->checkBadWords($request->name);
+        // check bad words namẻ
+        $checkBadWordName = $this->checkBadWords(trim($request->name));
         if ($checkBadWordName['error'] != 0) {
             return response()->json([
                 'error' => 1, // Loi check bad words
-                'data' => $checkBadWordName['text']
+                'data' => 'Nội dung bạn nhập có chứa từ "'.$checkBadWordName['text'].'" chưa đúng chuẩn mực, nhạy cảm và không phù hợp!'
             ]);
         }
 
         // check bad words content
-        $checkBadWordEmail = $this->checkBadWords($request->content);
+        $checkBadWordEmail = $this->checkBadWords(trim($request->content));
         if ($checkBadWordEmail['error'] != 0) {
             return response()->json([
-                'error' => 2, // Loi check bad words
-                'data' => $checkBadWordEmail['text']
+                'error' => 1, // Loi check bad words
+                'data' => 'Nội dung bạn nhập có chứa từ "'.$checkBadWordEmail['text'].'" chưa đúng chuẩn mực, nhạy cảm và không phù hợp!'
             ]);
         }
 
-        // trung email
-        $wishByEmail = $this->getWishByEmail($request->email);
+        // validate email
+        if (!filter_var(trim($request->email), FILTER_VALIDATE_EMAIL)) {
+            $emailErr = "Invalid email format";
+            return response()->json([
+                'error' => 2, 
+                'data' => 'Email bạn nhập chưa đúng định dạng. Vui lòng nhập lại!'
+            ]);
+        }
+
+        // check trung email
+        $wishByEmail = $this->getWishByEmail(trim($request->email));
         if ($wishByEmail) {
             return response()->json([
                 'error' => 3, // Loi trung email
-                'data' => $wishByEmail->email
+                'data' => 'Email '.$wishByEmail->email.' đã từng được sử dụng để gửi lời chúc. Vui lòng nhập email khác!'
             ]);
         }
 
@@ -126,11 +135,11 @@ class WishesController extends Controller
                     'email' => $request->email
                 ]
             );
-
+            
             if ($id) {
                 $mailData = [
-                    'name' => $request->name,
-                    'content' => $request->content,
+                    'name' => trim($request->name),
+                    'content' => trim($request->content),
                     'key' => $key
                 ];
                  
