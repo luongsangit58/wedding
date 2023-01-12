@@ -12,10 +12,10 @@
                 <p>Sang Trang xin chân thành cảm ơn lời chúc vô cùng ý nghĩa của bạn.</p>
                 <blockquote class="blockquote">
                     <p class="mb-0">"{{ $mailData['content'] }}"</p>
-                  </blockquote>
-                <p>Sang Trang sẽ trao đến 2 người may mắn nhất trong danh sách những bạn đã gửi lời chúc dựa theo <strong>Mã số may mắn</strong> bằng hình thức quay ngẫu nhiên vào ngày tổ chức hôn lễ 25/02/2023 (Ngày 6 tháng 2 năm Quý Mão).</p>
+                </blockquote>
+                <p>Sang Trang sẽ trao đến 2 người may mắn trong danh sách những bạn đã gửi lời chúc dựa theo <strong>Mã số may mắn</strong> bằng hình thức quay thưởng ngẫu nhiên vào ngày tổ chức hôn lễ 25/02/2023 (Ngày 6 tháng 2 năm Quý Mão).</p>
                 <div class="text-center">
-                    <p>Mã số may mắn của bạn là: <strong>{{ $mailData['key'] }}</strong></p>
+                    <p>Mã số may mắn của bạn là: <strong style="font-size: 25px;">{{ $mailData['key'] }}</strong></p>
                 </div>
                 <p>Hãy đến dự lễ thành hôn của Sang Trang để cùng chung vui và có cơ hội nhận những phần quà thật hấp dẫn nhé!</p>
                 <p>Trân trọng cảm ơn!</p>

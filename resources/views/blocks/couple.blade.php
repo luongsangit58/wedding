@@ -16,8 +16,8 @@
                     <img class="img-responsive lazy" data-src="../images/groom.jpg" alt="groom">
                 </div>
                 <div class="desc-groom">
-                    <h3>Lương Sang</h3>
                     <p>Chú rể</p>
+                    <h3>Lương Sang</h3>
                     <p>Song Tử</p>
                 </div>
             </div>
@@ -27,8 +27,8 @@
                     <img class="img-responsive lazy" data-src="../images/bride.jpg" alt="groom">
                 </div>
                 <div class="desc-bride">
-                    <h3>Hà Trang</h3>
                     <p>Cô dâu</p>
+                    <h3>Hà Trang</h3>
                     <p>Bọ Cạp</p>
                 </div>
             </div>
