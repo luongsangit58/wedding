@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
                 <h2>Gửi lời chúc</h2>
-                <p class="poem-love">Khi gửi lời chúc bạn sẽ có cơ hội trở thành 2 người may mắn nhất<br/>dành được phần quà vô cùng ý nghĩa từ Sang Trang trong ngày trọng đại!</p>
+                <p class="poem-love">Khi gửi lời chúc bạn sẽ có cơ hội trở thành 2 người may mắn dành được phần quà vô cùng ý nghĩa từ Sang Trang trong ngày trọng đại!</p>
             </div>
             <div class="col-md-6 col-md-offset-3 animate-box box-sent-wish">
                 <form>
