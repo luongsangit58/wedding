@@ -2000,4 +2000,21 @@ body { /*cho Firefox*/
 .particletext.hearts > .particle:after {
   transform: translateY(-50%);
 }
+
+/* Lucky draw */
+.lucky_draw_1, .lucky_draw_2 {
+  display: none;
+}
+.title-lucky-draw h2 {
+  color: #F14E95;
+  display: none;
+  font-size: 35px;
+}
+.lucky_draw_1_name, .lucky_draw_1_email, .lucky_draw_2_name, .lucky_draw_2_email {
+  color: #000;
+}
+#lucky_draw_1, #lucky_draw_2 {
+  display: none;
+}
+
 /*# sourceMappingURL=style.css.map */

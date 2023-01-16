@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Mail;
 use App\Mail\DemoMail;
+use App\Mail\LuckyDrawMail;
 
 class WishesController extends Controller
 {
@@ -56,7 +57,15 @@ class WishesController extends Controller
             $value->email = $this->obfuscateEmail($value->email);
         }
 
-        return view('index')->with('wishes', $data);
+        $luckyDraw = DB::table('loi_chuc')->where('lucky_draw', '1')->get()->toArray();
+        foreach ($luckyDraw as $key => $value) {
+            $value->email = $this->obfuscateEmail($value->email);
+        }
+
+        return view("index", [
+            "wishes" => $data,
+            'luckydraw' => $luckyDraw
+        ]);
     }
 
     // Get all
@@ -69,6 +78,72 @@ class WishesController extends Controller
         }
 
         return view('wisheslist')->with('wishes', $wishes);
+    }
+
+    // POST lucky draw wish
+    public function postLuckyDrawWish() {
+        try {            
+            $wishes = DB::table('loi_chuc')->where('lucky_draw', '0')->get()->toArray();
+            shuffle($wishes);
+
+            $luckyDraw1 = current($wishes);
+            $luckyDraw2 = end($wishes);
+
+            // Update lucky draw
+            DB::table('loi_chuc')->where('id', $luckyDraw1->id)->update(['lucky_draw' => '1']);
+            DB::table('loi_chuc')->where('id', $luckyDraw2->id)->update(['lucky_draw' => '1']);
+
+
+            // Data send email lucky draw
+            $mailLuckyDraw1 = [
+                'name' => trim($luckyDraw1->name),
+                'key' => $luckyDraw1->key
+            ];
+            
+            $mailLuckyDraw2 = [
+                'name' => trim($luckyDraw2->name),
+                'key' => $luckyDraw2->key
+            ];
+
+            // Send email lucky draw 1
+            try {    
+                Mail::to($luckyDraw1->email)->send(new LuckyDrawMail($mailLuckyDraw1));
+            } catch (\Exception $th) {
+                Mail::to('luongsangit58@gmail.com')->send(new LuckyDrawMail($mailLuckyDraw1));
+            }
+
+            // Send email lucky draw 2
+            try {    
+                Mail::to($luckyDraw1->email)->send(new LuckyDrawMail($mailLuckyDraw2));
+            } catch (\Exception $th) {
+                Mail::to('luongsangit58@gmail.com')->send(new LuckyDrawMail($mailLuckyDraw2));
+            }
+            
+            foreach ($wishes as $key => $value) {
+                $value->email = $this->obfuscateEmail($value->email);
+            }
+
+            return response()->json([
+                'error' => 0,
+                'lucky_draw_1' => $luckyDraw1,
+                'lucky_draw_2' => $luckyDraw2
+            ]);
+        } catch (\Exception $th) {
+            return response()->json([
+                'error' => 1,
+                'data' => $th
+            ]);
+        }
+    }
+
+    // POST lucky draw wish
+    public function getLuckyDrawWish() {
+        $count = DB::table('loi_chuc')->where('lucky_draw', '1')->count();
+        if ($count >= 2) {
+            return redirect('/');
+        } else {
+            return view('wishes/luckydraw');
+        }
     }
 
     // Get list wishes
@@ -176,7 +251,7 @@ class WishesController extends Controller
             ]);
         }
 
-        $key = $this->genUid(6);
+        $key = $this->genUid(4);
         try {
             $id = DB::table('loi_chuc')->insertGetId(
                 [

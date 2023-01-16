@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'App\Http\Controllers\WishesController@index');
 Route::get('/loi-chuc', 'App\Http\Controllers\WishesController@getWishes');
+Route::get('/ma-so-may-man', 'App\Http\Controllers\WishesController@getLuckyDrawWish');
+Route::post('/ma-so-may-man', 'App\Http\Controllers\WishesController@postLuckyDrawWish');
 Route::get('/thiep-moi/{key}', 'App\Http\Controllers\InvitationController@index');
 Route::get('/wishes/insert', 'App\Http\Controllers\WishesController@insertWishes');
 Route::get('/wishes/update-sent-email/{email}', 'App\Http\Controllers\WishesController@updateSentEmail');

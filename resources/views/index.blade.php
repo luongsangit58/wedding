@@ -11,7 +11,8 @@
         @include('blocks.listwishes')    
         @include('blocks.gallery')    
         @include('blocks.map')  
-        @include('blocks.sendwish')  
+        @include('blocks.sendwish') 
+        <!-- @include('blocks.luckydraw')  -->
         @include('blocks.footer') 
         @include('blocks.modal') 
 	</div>  
