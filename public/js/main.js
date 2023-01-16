@@ -299,9 +299,7 @@
 		const myInterval = setInterval(checkTimeSentEmail, 1000);
 
 		function checkTimeSentEmail() {
-			console.log(timeSentEmail)
 			if (Math.round(+new Date()/1000) - parseInt(timeSentEmail) > 3*60) {
-				console.log(3424234)
 				// $('.btn-send-wish').attr('disabled', false);
 				localStorage.removeItem("wish_sent_email_time");
 				clearInterval(myInterval);

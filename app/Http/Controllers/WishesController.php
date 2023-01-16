@@ -71,6 +71,40 @@ class WishesController extends Controller
         return view('wisheslist')->with('wishes', $wishes);
     }
 
+    // Get list wishes
+    public function getListWishesAPI() {
+        $wishes = DB::table('loi_chuc')->select('id', 'name', 'key', 'content', 'email', 'sent_email')->get()->toArray();
+
+        return view('wishes/list')->with('wishes', $wishes);
+    }
+
+    // Form Update wish
+    public function updateForm($id) {
+        $wish = DB::table('loi_chuc')->where('id', $id)->first();
+
+        return view('wishes/update')->with('wish', $wish);
+    }
+
+    // Update wish by ID
+    public function updateWishById(Request $request) {
+        if ($request->isMethod('post')) {
+            try {
+                DB::table('loi_chuc')->where('id', $request->id)->update(['name' => $request->name]);
+                DB::table('loi_chuc')->where('id', $request->id)->update(['email' => $request->email]);
+                DB::table('loi_chuc')->where('id', $request->id)->update(['content' => $request->content]);
+                DB::table('loi_chuc')->where('id', $request->id)->update(['key' => $request->key]);
+                DB::table('loi_chuc')->where('id', $request->id)->update(['sent_email' => $request->sent_email]);
+
+                return redirect('/wishes/getAll');
+            } catch (\Exception $th) {
+                return response()->json([
+                    'error' => 1,
+                    'message' => $th
+                ]);
+            }
+        }
+    }
+
     // Get wish by email
     public function getWishByEmail($email) {
         $wish = DB::table('loi_chuc')->where('email', $email)->first();
@@ -80,20 +114,29 @@ class WishesController extends Controller
 
     // Update sent email
     public function updateSentEmail($email) {
-        $affected = DB::table('loi_chuc')->where('email', $email)->update(['sent_email' => 1]);
-        return response()->json([
-            'error' => 0, // Loi check bad words
-            'message' => 'update email'
-        ]);
+        try {
+            DB::table('loi_chuc')->where('email', $email)->update(['sent_email' => 1]);
+            return redirect('/wishes/getAll');
+        } catch (\Exception $th) {
+            return response()->json([
+                'error' => 1,
+                'message' => $th
+            ]);
+        }
     }
 
     // Delete wish
     public function deleteWishByEmail($email) {
-        DB::table('loi_chuc')->where('email', $email)->delete();
-        return response()->json([
-            'error' => 0, // Loi check bad words
-            'message' => 'Deleted wish by email '.$email
-        ]);
+        try {
+            DB::table('loi_chuc')->where('email', $email)->delete();
+            return redirect('/wishes/getAll');
+        } catch (\Exception $e) {
+            dd($e);
+            return response()->json([
+                'error' => 1,
+                'message' => $th
+            ]);
+        }
     }
 
     // Insert
@@ -144,31 +187,29 @@ class WishesController extends Controller
                     'email' => $request->email
                 ]
             );
-            
-            if ($id) {
+                
+            try {
                 $mailData = [
                     'name' => trim($request->name),
                     'content' => trim($request->content),
                     'key' => $key
                 ];
-                 
-                try {
-                    Mail::to($request->email)->send(new DemoMail($mailData));
-                    $affected = DB::table('loi_chuc')->where('id', $id)->update(['sent_email' => 1]);
-                } catch (\Exception $e) {
-                    $mailData = [
-                        'name' => '['.$request->email.'] '.$request->name,
-                        'content' => $request->content,
-                        'key' => $key
-                    ];
-                    Mail::to('luongsangit58@gmail.com')->send(new DemoMail($mailData));
-                }
-                
-                return response()->json([
-                    'error' => 0,
-                    'data' => $id
-                ]);
+
+                Mail::to($request->email)->send(new DemoMail($mailData));
+                $affected = DB::table('loi_chuc')->where('id', $id)->update(['sent_email' => 1]);
+            } catch (\Exception $e) {
+                $mailData = [
+                    'name' => '['.$request->email.'] '.$request->name,
+                    'content' => $request->content,
+                    'key' => $key
+                ];
+                Mail::to('luongsangit58@gmail.com')->send(new DemoMail($mailData));
             }
+            
+            return response()->json([
+                'error' => 0,
+                'data' => $id
+            ]);
         } catch (\Exception $e) {
             return response()->json([
                 'error' => 500,
