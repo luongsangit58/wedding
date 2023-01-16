@@ -14,9 +14,9 @@
             <div class="blog-slider__item swiper-slide">
                 <div class="blog-slider__img">
                     @if ($id+1 <= 12)
-                    <img data-src="images/gallery-{{ $id+1 }}.jpg" class="lazy"/>
+                    <img data-src="images/gallery/gallery-{{ $id+1 }}.jpg" class="lazy"/>
                     @else
-                    <img data-src="images/gallery-1.jpg" class="lazy"/>
+                    <img data-src="images/gallery/gallery-1.jpg" class="lazy"/>
                     @endif
                 </div>
                 <div class="blog-slider__content">

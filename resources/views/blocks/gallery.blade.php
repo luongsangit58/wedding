@@ -15,17 +15,17 @@
                 <ul id="fh5co-gallery-list">
                     @if(Route::current()->getName() == 'anh')
                         @for ($i = 1; $i <= 12; $i++)
-                            <li class="one-third animate-box lazy" data-src="images/gallery-{{ $i }}.jpg" data-animate-effect="fadeIn"> 
-                                <a href="images/gallery-{{ $i }}.jpg" class="image-popup">
-                                    <img data-src="images/gallery-{{ $i }}.jpg" class="item-gallery lazy"/>
+                            <li class="one-third animate-box lazy" data-src="images/gallery/gallery-{{ $i }}.jpg" data-animate-effect="fadeIn"> 
+                                <a href="images/gallery/gallery-{{ $i }}.jpg" class="image-popup">
+                                    <img data-src="images/gallery/gallery-{{ $i }}.jpg" class="item-gallery lazy"/>
                                 </a>
                             </li>
                         @endfor
                     @else
                         @for ($i = 1; $i <= 6; $i++)
-                            <li class="one-third animate-box lazy" data-src="images/gallery-{{ $i }}.jpg" data-animate-effect="fadeIn"> 
-                                <a href="images/gallery-{{ $i }}.jpg" class="image-popup">
-                                    <img data-src="images/gallery-{{ $i }}.jpg" class="item-gallery lazy"/>
+                            <li class="one-third animate-box lazy" data-src="images/gallery/gallery-{{ $i }}.jpg" data-animate-effect="fadeIn"> 
+                                <a href="images/gallery/gallery-{{ $i }}.jpg" class="image-popup">
+                                    <img data-src="images/gallery/gallery-{{ $i }}.jpg" class="item-gallery lazy"/>
                                 </a>
                             </li>
                         @endfor
