@@ -295,19 +295,13 @@
 		var timeSentEmail = parseInt(localStorage.getItem("wish_sent_email_time")) ? localStorage.getItem("wish_sent_email_time") : 0;
 		// $('.btn-send-wish').attr('disabled', true);
 
-		if (timeSentEmail == 0) return true;
-		const myInterval = setInterval(checkTimeSentEmail, 1000);
+		if (Math.round(+new Date()/1000) - parseInt(timeSentEmail) > 3*60) {
+			// $('.btn-send-wish').attr('disabled', false);
+			localStorage.removeItem("wish_sent_email_time");
 
-		function checkTimeSentEmail() {
-			if (Math.round(+new Date()/1000) - parseInt(timeSentEmail) > 3*60) {
-				// $('.btn-send-wish').attr('disabled', false);
-				localStorage.removeItem("wish_sent_email_time");
-				clearInterval(myInterval);
-
-				return true;
-			}
+			return true;
 		}
-		
+
 		return false;
 	};
 
