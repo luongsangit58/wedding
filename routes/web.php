@@ -23,6 +23,8 @@ Route::get('/invitation/getAll', 'App\Http\Controllers\InvitationController@getI
 Route::get('/invitation/delete/{id}', 'App\Http\Controllers\InvitationController@deleteInvitationById');
 Route::get('/invitation/update/{id}', 'App\Http\Controllers\InvitationController@updateInvitationForm');
 Route::post('/invitation/update', 'App\Http\Controllers\InvitationController@updateInvitationById');
+Route::get('/invitation/insert', 'App\Http\Controllers\InvitationController@insertInvitationForm');
+Route::post('/invitation/insert', 'App\Http\Controllers\InvitationController@insertInvitation');
 
 Route::get('/loi-chuc', 'App\Http\Controllers\WishesController@getWishes')->name('loi-chuc');
 Route::get('/wishes/getIp', 'App\Http\Controllers\WishesController@getRealIPAddress');

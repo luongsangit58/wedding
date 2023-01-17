@@ -4,6 +4,7 @@
     <div class="table-responsive">
         <br>
         <h3 class="text-center">Thiệp mời</h3>
+        <a href="/invitation/insert" class="btn btn-info text-center">Thêm thiệp mời</a>
         <table class="table table-bordered">
             <thead>
                 <tr>

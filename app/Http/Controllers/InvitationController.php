@@ -30,6 +30,34 @@ class InvitationController extends Controller
         }
     }
 
+    // Form Insert Invitation
+    public function insertInvitationForm() {
+        return view('invitation/insert');
+    }
+
+    // Insert Invitation
+    public function insertInvitation(Request $request) {
+        if ($request->isMethod('post')) {
+            try {
+                $id = DB::table('thiep_moi')->insertGetId(
+                    [
+                        'name' => $request->name, 
+                        'key' => $request->key,
+                        'name_display' => $request->name_display,
+                        'relationship' => $request->relationship
+                    ]
+                );
+
+                return redirect('/invitation/getAll');
+            } catch (\Exception $th) {
+                return response()->json([
+                    'error' => 1,
+                    'message' => $th
+                ]);
+            }
+        }
+    }
+
     // Form Update Invitation
     public function updateInvitationForm($id) {
         $invitation = DB::table('thiep_moi')->where('id', $id)->first();
