@@ -4,7 +4,7 @@
 @section('content')
     <div class="container">
         <br>
-        <h3>Edit ID: {{$wish->id}}</h3>
+        <h3>Wish edit ID: {{$wish->id}}</h3>
         <form method="post" action="{{ url('wishes/update') }}">
             @csrf
             <div class="form-group">

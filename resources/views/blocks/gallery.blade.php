@@ -1,9 +1,14 @@
+<?php 
+    $arrGallery = range(1, 12); 
+    shuffle($arrGallery);
+    $arrGalleryShuffle = array_slice($arrGallery, 0, 6);
+?>
 <div id="fh5co-gallery" class="fh5co-bg-bottom lazy" data-src="https://img.freepik.com/free-photo/blank-elegant-floral-frame-design_53876-128149.jpg?w=1380" data-scroll-top="anh">
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
                 <!-- <span>Our Memories</span> -->
-                <h2><a href="anh">Thư Viện Ảnh</a></h2>
+                <h2><a href="/anh">Thư Viện Ảnh</a></h2>
                 <p class="poem-love">
                     Ba chìm, bảy nổi giữ trọn tấm lòng son</br>
                     Yêu nhau đến khi chỉ còn một hơi thở
@@ -14,21 +19,21 @@
             <div class="col-md-12">
                 <ul id="fh5co-gallery-list">
                     @if(Route::current()->getName() == 'anh')
-                        @for ($i = 1; $i <= 12; $i++)
+                        @foreach ($arrGallery as $i)
                             <li class="one-third animate-box lazy" data-src="images/gallery/gallery-{{ $i }}.jpg" data-animate-effect="fadeIn"> 
                                 <a href="images/gallery/gallery-{{ $i }}.jpg" class="image-popup">
                                     <img data-src="images/gallery/gallery-{{ $i }}.jpg" class="item-gallery lazy"/>
                                 </a>
                             </li>
-                        @endfor
+                        @endforeach
                     @else
-                        @for ($i = 1; $i <= 6; $i++)
+                        @foreach ($arrGalleryShuffle as $i)
                             <li class="one-third animate-box lazy" data-src="images/gallery/gallery-{{ $i }}.jpg" data-animate-effect="fadeIn"> 
                                 <a href="images/gallery/gallery-{{ $i }}.jpg" class="image-popup">
                                     <img data-src="images/gallery/gallery-{{ $i }}.jpg" class="item-gallery lazy"/>
                                 </a>
                             </li>
-                        @endfor
+                        @endforeach
                     @endif
                 </ul>		
             </div>

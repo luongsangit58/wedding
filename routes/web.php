@@ -14,15 +14,22 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'App\Http\Controllers\WishesController@index');
-Route::get('/loi-chuc', 'App\Http\Controllers\WishesController@getWishes');
-Route::get('/ma-so-may-man', 'App\Http\Controllers\WishesController@getLuckyDrawWish');
+
+Route::get('/ma-so-may-man', 'App\Http\Controllers\WishesController@getLuckyDrawWish')->name('ma-so-may-man');
 Route::post('/ma-so-may-man', 'App\Http\Controllers\WishesController@postLuckyDrawWish');
-Route::get('/thiep-moi/{key}', 'App\Http\Controllers\InvitationController@index');
+
+Route::get('/thiep-moi/{key}', 'App\Http\Controllers\InvitationController@index')->name('thiep-moi');
+Route::get('/invitation/getAll', 'App\Http\Controllers\InvitationController@getInvitations');
+Route::get('/invitation/delete/{id}', 'App\Http\Controllers\InvitationController@deleteInvitationById');
+Route::get('/invitation/update/{id}', 'App\Http\Controllers\InvitationController@updateInvitationForm');
+Route::post('/invitation/update', 'App\Http\Controllers\InvitationController@updateInvitationById');
+
+Route::get('/loi-chuc', 'App\Http\Controllers\WishesController@getWishes')->name('loi-chuc');
+Route::get('/wishes/getIp', 'App\Http\Controllers\WishesController@getRealIPAddress');
 Route::get('/wishes/insert', 'App\Http\Controllers\WishesController@insertWishes');
 Route::get('/wishes/update-sent-email/{email}', 'App\Http\Controllers\WishesController@updateSentEmail');
-Route::get('/wishes/delete/{email}', 'App\Http\Controllers\WishesController@deleteWishByEmail');
 Route::get('/wishes/getAll', 'App\Http\Controllers\WishesController@getListWishesAPI');
-Route::get('/wishes/getIp', 'App\Http\Controllers\WishesController@getRealIPAddress');
+Route::get('/wishes/delete/{email}', 'App\Http\Controllers\WishesController@deleteWishByEmail');
 Route::get('/wishes/update/{id}', 'App\Http\Controllers\WishesController@updateForm');
 Route::post('/wishes/update', 'App\Http\Controllers\WishesController@updateWishById');
 
@@ -30,14 +37,14 @@ Route::get('/anh', ['as'=>'anh', function() {
     return view('gallery');
 }]);
 
-Route::get('/gui-loi-chuc', function () {
+Route::get('/gui-loi-chuc', ['as'=>'gui-loi-chuc', function() {
     return view('wishes');
-});
+}]);
 
-Route::get('/chuyen-tinh', function () {
+Route::get('/chuyen-tinh', ['as'=>'chuyen-tinh', function() {
     return view('story');
-});
+}]);
 
-Route::get('/thiep-moi', function () {
+Route::get('/thiep-moi', function() {
     return redirect('/');
 });

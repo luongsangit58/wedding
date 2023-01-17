@@ -4,26 +4,80 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Sang Trang</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- anh -->
+		@if(Route::current()->getName() == 'anh')
+		<title>Thư viện ảnh - Sang Trang</title>
+        <meta name="description" content="Thư viện ảnh - Sang Trang" />
+
+		<meta property="og:title" content="Thư viện ảnh - Sang Trang"/>
+		<meta name="twitter:title" content="Thư viện ảnh - Sang Trang" />
+
+		<!-- gui-loi-chuc -->
+		@elseif(Route::current()->getName() == 'gui-loi-chuc')
+		<title>Gửi lời chúc - Sang Trang</title>
+        <meta name="description" content="Gửi lời chúc - Sang Trang" />
+
+		<meta property="og:title" content="Gửi lời chúc - Sang Trang"/>
+		<meta name="twitter:title" content="Gửi lời chúc - Sang Trang" />
+
+		<!-- chuyen-tinh -->
+		@elseif(Route::current()->getName() == 'chuyen-tinh')
+		<title>Chuyện tình - Sang Trang</title>
+        <meta name="description" content="Chuyện tình - Sang Trang" />
+		
+		<meta property="og:title" content="Chuyện tình - Sang Trang"/>
+		<meta name="twitter:title" content="Chuyện tình - Sang Trang" />	
+		
+		<!-- thiep-moi -->
+		@elseif(Route::current()->getName() == 'thiep-moi')
+		<title>Thiệp mời {{ $invitation->name }} - Sang Trang</title>
+        <meta name="description" content="Thiệp mời {{ $invitation->name }} - Sang Trang" />
+
+		<meta property="og:title" content="Thiệp mời {{ $invitation->name }} - Sang Trang"/>
+		<meta name="twitter:title" content="Thiệp mời {{ $invitation->name }} - Sang Trang" />
+
+		<!-- loi-chuc -->
+		@elseif(Route::current()->getName() == 'loi-chuc')
+		<title>Lời chúc - Sang Trang</title>
+        <meta name="description" content="Lời chúc - Sang Trang" />
+
+		<meta property="og:title" content="Lời chúc - Sang Trang"/>
+		<meta name="twitter:title" content="Lời chúc - Sang Trang" />
+
+		<!-- ma-so-may-man -->
+		@elseif(Route::current()->getName() == 'ma-so-may-man')
+		<title>Mã số may mắn - Sang Trang</title>
+        <meta name="description" content="Mã số may mắn - Sang Trang" />
+
+		<meta property="og:title" content="Mã số may mắn - Sang Trang"/>
+		<meta name="twitter:title" content="Mã số may mắn - Sang Trang" />
+
+		<!-- home -->
+		@else
+		<title>Sang Trang</title>
 		<meta name="description" content="Sang Trang" />
-		<meta name="keywords" content="sangtrang.com" />
+		
+		<meta property="og:title" content="Sang Trang"/>
+		<meta name="twitter:title" content="Sang Trang" />
+        @endif
+
+		<meta name="keywords" content="sangtrang.com, sang trang, sangtrang, đám cưới, dam cuoi, wedding, happy, đám cưới Sang Trang, dam cuoi Sang Trang" />
 		<meta name="author" content="Nguyễn Lương Sang" />
 
 		<!-- Facebook and Twitter integration -->
 		<meta property="og:locale" content="vn_VN" />
 		<meta property="og:type" content="article" />
-		<meta property="og:title" content="Sang Trang"/>
 		<meta property="og:url" content="sangtrang.com"/>
 		<meta property="og:site_name" content="sangtrang.com"/>
-		<meta property="og:image" content="{{ URL::asset('images/cta-1.jpg') }}">
+		<meta property="og:image" content="{{ URL::asset('images/cta-pc.jpeg') }}">
 		<meta property="og:image:type" content="image/png">
 		<meta property="og:description" content="Đám cưới Sang Trang"/>
 
-		<meta name="twitter:title" content="Sang Trang" />
-		<meta name="twitter:image" content="{{ URL::asset('images/cta-1.jpg') }}" />
+		<meta name="twitter:image" content="{{ URL::asset('images/cta-pc.jpeg') }}" />
 		<meta name="twitter:url" content="sangtrang.com" />
-		<meta name="twitter:card" content="" />
+		<meta name="twitter:card" content="Sang Trang" />
 
 		<link rel="shortcut icon" type="image/png" href="{{ URL::asset('images/favicon.png') }}"/>
 		<link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
