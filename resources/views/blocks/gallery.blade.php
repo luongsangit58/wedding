@@ -33,5 +33,10 @@
                 </ul>		
             </div>
         </div>
+        @if(Route::current()->getName() != 'anh')
+        <div class="btn-invitition text-center">
+            <a href="/anh" class="btn btn-primary">Xem thêm</a>
+        </div>
+        @endif
     </div>
 </div>
