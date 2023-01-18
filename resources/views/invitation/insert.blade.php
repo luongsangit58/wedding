@@ -9,7 +9,7 @@
             @csrf
             <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" id="name" name="name" class="form-control" value="">
+                <input type="text" id="name" name="name" class="form-control" value="Bạn ">
             </div>
             <div class="form-group">
                 <label for="key">Key</label>
@@ -17,7 +17,7 @@
             </div>
             <div class="form-group">
                 <label for="name_display">Name display</label>
-                <input type="name_display" id="name_display" name="name_display" class="form-control" value="và người thương">
+                <input type="name_display" id="name_display" name="name_display" class="form-control" value=" và người thương">
             </div>
             <div class="form-group">
                 <label for="relationship">Relationship</label>

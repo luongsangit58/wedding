@@ -24,10 +24,8 @@
                     <td><a href="/wishes/update/{{$wish->id}}">{{$wish->content}}</a></td>
                     <td>{{$wish->sent_email}}</td>
                     <td>
-                        <div>
-                            <a type="button" href="/wishes/update-sent-email/{{$wish->email}}" class="btn btn-info">Update SE</a>
-                            <a type="button" href="/wishes/delete/{{$wish->email}}" class="btn btn-danger">Delete</a>
-                        </div>
+                        <a type="button" href="/wishes/update-sent-email/{{$wish->email}}">Update SE</a> ||
+                        <a type="button" href="/wishes/delete/{{$wish->email}}">Delete</a>
                     </td>
                 </tr>
                 @endforeach

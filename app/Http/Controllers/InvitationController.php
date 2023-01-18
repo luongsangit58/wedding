@@ -22,7 +22,7 @@ class InvitationController extends Controller
 
     // Get All Invitations
     public function getInvitations() {
-        $invitations = DB::table('thiep_moi')->get()->toArray();
+        $invitations = DB::table('thiep_moi')->orderBy('key', 'asc')->get()->toArray();
         if ($invitations) {
             return view('invitation/list')->with('invitations', $invitations);
         } else {

@@ -22,11 +22,7 @@
                     <td><a href="/thiep-moi/{{$invitation->key}}">{{$invitation->key}}</a></td>
                     <td><a href="/invitation/update/{{$invitation->id}}">{{$invitation->name_display}}</a></td>
                     <td><a href="/invitation/update/{{$invitation->id}}">{{$invitation->relationship}}</a></td>
-                    <td>
-                        <div>
-                            <a type="button" href="/invitation/delete/{{$invitation->id}}" class="btn btn-danger">Delete</a>
-                        </div>
-                    </td>
+                    <td><a type="button" href="/invitation/delete/{{$invitation->id}}">Delete</a></td>
                 </tr>
                 @endforeach
             </tbody>
