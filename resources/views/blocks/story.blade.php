@@ -5,7 +5,7 @@
                 <h2><a href="/chuyen-tinh">Chuyện Tình</a></h2>
                 <p class="poem-love">
                     Tâm bất biến giữa dòng đời vạn biến</br>
-                    Ta sẽ cùng nhau lấp biển, rời non
+                    Ta sẽ cùng nhau lấp biển rời non
                 </p>
             </div>
         </div>
@@ -177,6 +177,18 @@
                             </div>
                             <div class="timeline-body">
                                 <p>Chuyến bay đầu tiên cùng nhau của 2 đứa. Cách ngày bay một tuần cả 2 đều bị Covid nhưng thật may đã kịp khỏi để chúng ta đã có một chuyến đi trọn vẹn, nhẹ nhàng và đầy ý nghĩa.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="animate-box">
+                        <div class="timeline-badge lazy" data-src="images/story/dam-cuoi.jpg"></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h3 class="timeline-title">Đám cưới</h3>
+                                <span class="date">25/02/2023</span>
+                            </div>
+                            <div class="timeline-body">
+                                <p>Để nói "Anh yêu em" có lẽ anh chẳng cần mất đến 10 giây đối với bất kỳ ngôn ngữ nào. Nhưng để chứng minh điều đó anh đã giành hơn 10 năm và sẽ là cả cuộc đời để thực hiện.</p>
                             </div>
                         </div>
                     </li>
