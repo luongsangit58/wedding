@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-                <h2>2 bạn may mắn</h2>
+                <h2>2 lời chúc ấn tượng</h2>
             </div>
         </div>
         <div class="row">
@@ -16,12 +16,12 @@
                                 <div class="testimony-slide active text-center">
                                     <h3>{{ $item->key }}</h3>
                                     <div>
-                                        <strong class="lucky_draw_2_name">{{ $item->name }}</strong>
+                                        <strong class="lucky_draw_2_name">- {{ $item->name }} -</strong>
                                         <br>
-                                        <i class="lucky_draw_2_email">{{ $item->email }}</i>
+                                        <i class="lucky_draw_2_email">[{{ $item->email }}]</i>
                                     </div>
                                     <br>
-                                    <p class="lucky_draw_2_content">{{ $item->content }}</p>
+                                    <p class="lucky_draw_2_content">"{{ $item->content }}"</p>
                                 </div>
                             </div>
                         </div>

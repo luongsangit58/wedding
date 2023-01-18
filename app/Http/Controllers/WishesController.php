@@ -215,7 +215,7 @@ class WishesController extends Controller
 
     // Insert
     public function insertWishes(Request $request) {
-        // check bad words namẻ
+        // check bad words name
         $checkBadWordName = $this->checkBadWords(trim($request->name));
         if ($checkBadWordName['error'] != 0) {
             return response()->json([
@@ -255,29 +255,32 @@ class WishesController extends Controller
         try {
             $id = DB::table('loi_chuc')->insertGetId(
                 [
-                    'name' => $request->name, 
+                    'name' => trim($request->name), 
                     'key' => $key,
-                    'content' => $request->content,
-                    'email' => $request->email
+                    'content' => trim($request->content),
+                    'email' => trim($request->email)
                 ]
             );
-                
-            try {
-                $mailData = [
-                    'name' => trim($request->name),
-                    'content' => trim($request->content),
-                    'key' => $key
-                ];
-
-                Mail::to($request->email)->send(new DemoMail($mailData));
-                $affected = DB::table('loi_chuc')->where('id', $id)->update(['sent_email' => 1]);
-            } catch (\Exception $e) {
-                $mailData = [
-                    'name' => '['.$request->email.'] '.$request->name,
-                    'content' => $request->content,
-                    'key' => $key
-                ];
-                Mail::to('luongsangit58@gmail.com')->send(new DemoMail($mailData));
+               
+            // Sent email until 12a.m 25/02/2023
+            if (time() < config('global.stop_send_wish')) {
+                try {
+                    $mailData = [
+                        'name' => trim($request->name),
+                        'content' => trim($request->content),
+                        'key' => $key
+                    ];
+    
+                    Mail::to($request->email)->send(new DemoMail($mailData));
+                    $affected = DB::table('loi_chuc')->where('id', $id)->update(['sent_email' => 1]);
+                } catch (\Exception $e) {
+                    $mailData = [
+                        'name' => '['.$request->email.'] '.$request->name,
+                        'content' => trim($request->content),
+                        'key' => $key
+                    ];
+                    Mail::to('luongsangit58@gmail.com')->send(new DemoMail($mailData));
+                }
             }
             
             return response()->json([

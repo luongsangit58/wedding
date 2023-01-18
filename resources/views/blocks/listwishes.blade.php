@@ -26,8 +26,10 @@
                 </div>
             </div>
         </div>
+        <?php if (time() < config('global.stop_send_wish')) : ?>
         <div class="btn-invitition text-center">
             <a href="/gui-loi-chuc" class="btn btn-primary">Gửi lời chúc</a>
         </div>
+        <?php endif; ?>
     </div>
 </div>

@@ -11,8 +11,13 @@
         @include('blocks.listwishes')    
         @include('blocks.gallery')    
         @include('blocks.map')  
-        @include('blocks.sendwish') 
-        <!-- @include('blocks.luckydraw')  -->
+        @include('blocks.sendwish')
+
+        <!-- Show lucky draw result -->
+        <?php if (time() > config('global.show_lucky_draw')) : ?>
+        @include('blocks.luckydraw')
+        <?php endif; ?>
+
         @include('blocks.footer') 
         @include('blocks.modal') 
 	</div>  

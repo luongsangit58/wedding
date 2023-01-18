@@ -15,7 +15,7 @@
                     </div>
                 </div>
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer" <?php if (time() > config('global.stop_send_wish')) echo "style='display:none;'"; ?>>
                 <p class="text-center" style="color: #000;">Thư cảm ơn và Mã số may mắn sẽ được gửi đến<br/>email <span class="sender-email">danglenguyenvu@gmail.com</span> trong thời gian sớm nhất!</p>
             </div>
         </div>

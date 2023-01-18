@@ -27,9 +27,11 @@
             </div>
             @endforeach
         </div>
+        <?php if (time() < config('global.stop_send_wish')) : ?>
         <div class="btn-invitition text-center">
             <a href="/gui-loi-chuc" class="btn btn-primary">Gửi lời chúc</a>
         </div>
+        <?php endif; ?>
         <div class="blog-slider__pagination"></div>
     </div>
 </div>

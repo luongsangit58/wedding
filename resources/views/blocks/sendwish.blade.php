@@ -1,3 +1,4 @@
+<?php if (time() < config('global.stop_send_wish')) : ?>
 <div class="fh5co-section bg-send-wish lazy" data-scroll-top='gui-loi-chuc' data-src="https://img.freepik.com/premium-photo/sakura-petals-falling-down-romantic-pink-flowers-falling-rain-flying-petals-pink-wide-background-love-romance-concept-neat-wedding-invitation_174187-6950.jpg?w=1308">
     <div class="container">
         <div class="row">
@@ -17,7 +18,7 @@
                     <div class="row form-group">
                         <div class="col-md-12">
                             <h3 class="send-wish-box-title">Email của bạn</h3>
-                            <input type="email" id="email" class="form-control" placeholder="Email của bạn sẽ được bảo mật tuyệt đối">
+                            <input type="email" id="email" class="form-control" placeholder="Email sẽ được bảo mật tuyệt đối">
                         </div>
                     </div>
                     <br/>
@@ -35,3 +36,4 @@
         </div>
     </div>
 </div>
+<?php endif; ?>

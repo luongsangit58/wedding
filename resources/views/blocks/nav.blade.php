@@ -10,7 +10,9 @@
                     <li class="loi-chuc"><a class="poem-love-shadow" href="/loi-chuc">Lời chúc</a></li>
                     <li class="anh"><a  class="poem-love-shadow" href="/anh">Thư viện ảnh</a></li>
                     <li class="chuyen-tinh"><a class="poem-love-shadow" href="/chuyen-tinh">Chuyện tình</a></li>
+                    <?php if (time() < config('global.stop_send_wish')) : ?>
                     <li class="gui-loi-chuc"><a class="poem-love-shadow" href="/gui-loi-chuc">Gửi lời chúc</a></li>
+                    <?php endif; ?>
                 </ul>
             </div>
         </div>
