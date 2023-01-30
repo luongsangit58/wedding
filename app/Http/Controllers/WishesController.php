@@ -335,9 +335,10 @@ class WishesController extends Controller
 
         $em   = explode("@",$email);
         $name = implode('@', array_slice($em, 0, count($em)-1));
-        $len  = floor(strlen($name)/2);
+        // $len  = floor(strlen($name) - 3);
+        $len = (strlen($name) > 3) ? 3 : 2;
     
-        return substr($name, 0, $len) . str_repeat('*', $len) . "@" . end($em);   
+        return substr($name, 0, strlen($name) - $len) . str_repeat('*', $len) . "@" . end($em);   
     }
 
     public function getRealIPAddress()

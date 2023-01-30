@@ -5,6 +5,10 @@
             <div class="col-md-12 embed-responsive embed-responsive-16by9">
                 <iframe class="embed-responsive-item" src="https://youtube.com/embed/gHqEV7Amai8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
+            <!-- <video width="100%" height="100%" poster="images/poster-wish.jpg" controls>
+                <source src="videos/wish.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video> -->
             <br/>
             <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
                 <h2>Gửi lời chúc</h2>
