@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Mail;
 use App\Mail\DemoMail;
 use App\Mail\LuckyDrawMail;
+use App\Mail\NotificationMail;
 
 class WishesController extends Controller
 {
@@ -49,7 +50,7 @@ class WishesController extends Controller
     ];
 
     public function index() {
-        $wishes = DB::table('loi_chuc')->select('id', 'name', 'key', 'content', 'email')->get()->toArray();
+        $wishes = DB::table('loi_chuc')->get()->toArray();
         shuffle($wishes);
         $data = array_slice($wishes, 0, 6);
 
@@ -70,7 +71,7 @@ class WishesController extends Controller
 
     // Get all
     public function getWishes() {
-        $wishes = DB::table('loi_chuc')->select('id', 'name', 'key', 'content', 'email')->get()->toArray();
+        $wishes = DB::table('loi_chuc')->get()->toArray();
         shuffle($wishes);
 
         foreach ($wishes as $key => $value) {
@@ -148,7 +149,7 @@ class WishesController extends Controller
 
     // Get list wishes
     public function getListWishesAPI() {
-        $wishes = DB::table('loi_chuc')->select('id', 'name', 'key', 'content', 'email', 'sent_email')->get()->toArray();
+        $wishes = DB::table('loi_chuc')->get()->toArray();
 
         return view('wishes/list')->with('wishes', $wishes);
     }
@@ -253,14 +254,24 @@ class WishesController extends Controller
 
         $key = $this->genUid(4);
         try {
-            $id = DB::table('loi_chuc')->insertGetId(
-                [
-                    'name' => trim($request->name), 
-                    'key' => $key,
-                    'content' => trim($request->content),
-                    'email' => trim($request->email)
-                ]
-            );
+            date_default_timezone_set('Asia/Ho_Chi_Minh');
+            $curentTime = date("Y-m-d H:i:s");
+            try {
+                $id = DB::table('loi_chuc')->insertGetId(
+                    [
+                        'name' => trim($request->name), 
+                        'key' => $key,
+                        'content' => trim($request->content),
+                        'email' => trim($request->email),
+                        'time' => $curentTime
+                    ]
+                );
+            } catch (\Exception $e) {
+                return response()->json([
+                    'error' => 500,
+                    'data' => 'Đã có lỗi xảy ra với dữ liệu bạn gửi. Vui lòng thử lại sau :('
+                ]);
+            }
                
             // Sent email until 12a.m 25/02/2023
             if (time() < config('global.stop_send_wish')) {
@@ -273,9 +284,17 @@ class WishesController extends Controller
     
                     Mail::to($request->email)->send(new DemoMail($mailData));
                     $affected = DB::table('loi_chuc')->where('id', $id)->update(['sent_email' => 1]);
+
+                    $mailNotificationData = [
+                        'name' => $request->name,
+                        'content' => trim($request->content),
+                        'email' => $request->email,
+                        'time' => $curentTime
+                    ];
+                    Mail::to('luongsangit58@gmail.com')->send(new NotificationMail($mailNotificationData));
                 } catch (\Exception $e) {
                     $mailData = [
-                        'name' => '['.$request->email.'] '.$request->name,
+                        'name' => 'Gửi email thất bại ['.$request->email.'] '.$request->name,
                         'content' => trim($request->content),
                         'key' => $key
                     ];
