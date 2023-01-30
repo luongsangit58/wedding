@@ -1,5 +1,5 @@
 <?php 
-    $arrGallery = range(1, 12); 
+    $arrGallery = range(1, config('global.count_gallery')); 
     shuffle($arrGallery);
     $arrGalleryShuffle = array_slice($arrGallery, 0, 6);
 ?>
@@ -10,7 +10,7 @@
                 <!-- <span>Our Memories</span> -->
                 <h2><a href="/anh">Thư Viện Ảnh</a></h2>
                 <p class="poem-love">
-                    Ba chìm, bảy nổi giữ trọn tấm lòng son</br>
+                    Ba chìm bảy nổi giữ trọn tấm lòng son</br>
                     Yêu nhau đến khi chỉ còn một hơi thở
                 </p>
             </div>

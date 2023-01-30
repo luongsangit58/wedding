@@ -1,3 +1,6 @@
+<?php 
+    $listIdGallery = range(1, config('global.count_gallery'));
+?>
 @extends('layouts.master')
 
 @section('content')
@@ -13,11 +16,7 @@
         @foreach ($wishes as $id => $wish)
             <div class="blog-slider__item swiper-slide">
                 <div class="blog-slider__img">
-                    @if ($id+1 <= 12)
-                    <img data-src="images/gallery/gallery-{{ $id+1 }}.jpg" class="lazy"/>
-                    @else
-                    <img data-src="images/gallery/gallery-1.jpg" class="lazy"/>
-                    @endif
+                    <img data-src="images/gallery/gallery-<?= array_rand($listIdGallery, 1) ?>.jpg" class="lazy"/>
                 </div>
                 <div class="blog-slider__content">
                     <div class="blog-slider__title">{{ $wish->name }}</div>
@@ -25,7 +24,7 @@
                     <div class="blog-slider__text">"{{ $wish->content }}"</div>
                 </div>
             </div>
-            @endforeach
+        @endforeach
         </div>
         <?php if (time() < config('global.stop_send_wish')) : ?>
         <div class="btn-invitition text-center">

@@ -12,7 +12,7 @@
         <div class="row">
             <div class="col-md-12 col-md-offset-0">
                 <ul class="timeline animate-box">
-		            <li class="animate-box">
+                    <li class="animate-box">
                         <div class="timeline-badge lazy" data-src="images/story/loi-yeu-dau.jpg"></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
@@ -44,7 +44,7 @@
                                 <span class="date">12/09/2014</span>
                             </div>
                             <div class="timeline-body">
-                                <p>Đón đưa nhau đi học hàng ngày qua con dốc dài, con dốc chất chứa những khoảnh khắc êm đềm của cả một hành trình tình yêu đôi đứa.</p>
+                                <p>Đón đưa nhau đi học hàng ngày qua con dốc dài, con dốc chất chứa những khoảnh khắc êm đềm của cả một hành trình tình yêu đôi lứa.</p>
                             </div>
                         </div>
                     </li>
@@ -56,7 +56,7 @@
                                 <span class="date">25/05/2015</span>
                             </div>
                             <div class="timeline-body">
-                                <p>Cùng nhau trải qua những khoảnh khắc quan trọng nhất cuộc đời học sinh.</p>
+                                <p>Ba năm cấp 3 trôi qua nhanh như một cơn gió. Cùng nhau trải qua thời khắc quan trọng nhất cuộc đời học sinh.</p>
                             </div>
                         </div>
                     </li>
@@ -96,7 +96,7 @@
                             </div>
                         </div>
                     </li>
-		            <li class="timeline-inverted animate-box">
+                    <li class="timeline-inverted animate-box">
                         <div class="timeline-badge lazy" data-src="images/story/ho-tay.jpg"></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
@@ -184,7 +184,7 @@
                         <div class="timeline-badge lazy" data-src="images/story/dam-cuoi.jpg"></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
-                                <h3 class="timeline-title">Đám cưới</h3>
+                                <h3 class="timeline-title">Ngày chung đôi</h3>
                                 <span class="date">25/02/2023</span>
                             </div>
                             <div class="timeline-body">
