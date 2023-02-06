@@ -4,6 +4,7 @@
 @extends('layouts.master')
 
 @section('content')
+<div class="fh5co-loader"></div>
 <div id="page">
     @include('blocks.nav')
 
@@ -16,7 +17,7 @@
         @foreach ($wishes as $id => $wish)
             <div class="blog-slider__item swiper-slide">
                 <div class="blog-slider__img">
-                    <img data-src="images/gallery/gallery-<?= array_rand($listIdGallery, 1) ?>.jpg" class="lazy"/>
+                    <img data-src="images/gallery/resize/gallery-<?= array_rand($listIdGallery, 1) ?>.jpg" class="lazy"/>
                 </div>
                 <div class="blog-slider__content">
                     <div class="blog-slider__title">{{ $wish->name }}</div>
