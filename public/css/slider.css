@@ -153,7 +153,7 @@ body {
 }
 @media screen and (max-height: 500px) and (min-width: 992px) {
   .blog-slider__img {
-    height: 270px;
+    height: 300px;
   }
 }
 .blog-slider__content {

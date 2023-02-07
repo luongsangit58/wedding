@@ -25,10 +25,10 @@
                                 <br/>
                                 <div class="event-localtion">
                                     <i class="bi bi-house-fill"></i>
-                                    <a href="https://goo.gl/maps/7wSb5xZUYbGitDhP6" target="_blank"><span>Tại: Gia đình nhà Gái</span></a>
+                                    <a href="https://goo.gl/maps/7wSb5xZUYbGitDhP6" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Xem bản đồ"><span>Tại: Gia đình nhà Gái</span></a>
                                     <br/>
                                     <i class="bi bi-geo-alt-fill"></i>
-                                    <a href="https://goo.gl/maps/7wSb5xZUYbGitDhP6" target="_blank"><span>131 đường Trần Hưng Đạo<br/>Thị xã Bỉm Sơn - Thanh Hoá</span></a>
+                                    <a href="https://goo.gl/maps/7wSb5xZUYbGitDhP6" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Xem bản đồ"><span>131 đường Trần Hưng Đạo<br/>Thị xã Bỉm Sơn - Thanh Hoá</span></a>
                                 </div>
                             </div>
                         </div>
@@ -43,10 +43,10 @@
                                 <br/>
                                 <div class="event-localtion">
                                     <i class="bi bi-house-fill"></i>
-                                    <a href="https://goo.gl/maps/N2Tt6RWpY7oHCgi46" target="_blank"><span>Tại: Khu ẩm thực sinh thái Hoàng Gia 1</span></a>
+                                    <a href="https://goo.gl/maps/N2Tt6RWpY7oHCgi46" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Xem bản đồ"><span>Tại: Khu ẩm thực sinh thái Hoàng Gia 1</span></a>
                                     <br/>
                                     <i class="bi bi-geo-alt-fill"></i>
-                                    <a href="https://goo.gl/maps/N2Tt6RWpY7oHCgi46" target="_blank"><span>Trần Phú - Phường Lam Sơn<br/>Thị xã Bỉm Sơn - Thanh Hoá</span></a>
+                                    <a href="https://goo.gl/maps/N2Tt6RWpY7oHCgi46" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Xem bản đồ"><span>Trần Phú - Phường Lam Sơn<br/>Thị xã Bỉm Sơn - Thanh Hoá</span></a>
                                 </div>
                             </div>
                         </div>

@@ -13,7 +13,7 @@
         <div class="couple-wrap animate-box">
             <div class="couple-half">
                 <div class="groom">
-                    <img class="img-responsive lazy" data-src="../images/groom.jpeg" alt="groom">
+                    <img class="img-responsive lazy" data-src="images/groom.webp" alt="groom">
                 </div>
                 <div class="desc-groom">
                     <p>- Chú rể -</p>
@@ -24,7 +24,7 @@
             <p class="heart text-center"><i class="bi bi-suit-heart-fill"></i></p>
             <div class="couple-half">
                 <div class="bride">
-                    <img class="img-responsive lazy" data-src="../images/bride.jpeg" alt="groom">
+                    <img class="img-responsive lazy" data-src="images/bride.webp" alt="groom">
                 </div>
                 <div class="desc-bride">
                     <p>- Cô dâu -</p>

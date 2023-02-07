@@ -1,5 +1,5 @@
 <header id="fh5co-header" class="fh5co-cover">
-    <div class="overlay"></div>
+    <div class="overlay overlay-mb-{{ rand(1, 3) }}"></div>
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2 text-center box-overley">

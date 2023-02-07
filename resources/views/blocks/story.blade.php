@@ -13,7 +13,7 @@
             <div class="col-md-12 col-md-offset-0">
                 <ul class="timeline animate-box">
                     <li class="animate-box">
-                        <div class="timeline-badge lazy" data-src="images/story/loi-yeu-dau.jpg"></div>
+                        <div class="timeline-badge lazy" data-src="images/story/loi-yeu-dau.webp"></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h3 class="timeline-title">Lời yêu đầu</h3>
@@ -25,7 +25,7 @@
                         </div>
                     </li>
                     <li class="timeline-inverted animate-box">
-                        <div class="timeline-badge lazy" data-src="images/story/tinh-yeu-bo-xit.jpg"></div>
+                        <div class="timeline-badge lazy" data-src="images/story/tinh-yeu-bo-xit.webp"></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h3 class="timeline-title">Tình yêu bọ xít</h3>
@@ -37,7 +37,7 @@
                         </div>
                     </li>
                     <li class="animate-box">
-                        <div class="timeline-badge lazy" data-src="images/story/con-doc-ky-niem.jpg"></div>
+                        <div class="timeline-badge lazy" data-src="images/story/con-doc-ky-niem.webp"></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h3 class="timeline-title">Con dốc kỷ niệm</h3>
@@ -49,7 +49,7 @@
                         </div>
                     </li>
                     <li class="timeline-inverted animate-box">
-                        <div class="timeline-badge lazy" data-src="images/story/ky-yeu-cap-3.jpg"></div>
+                        <div class="timeline-badge lazy" data-src="images/story/ky-yeu-cap-3.webp"></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h3 class="timeline-title">Kỷ yếu cấp 3</h3>
@@ -61,7 +61,7 @@
                         </div>
                     </li>
                     <li class="animate-box">
-                        <div class="timeline-badge lazy" data-src="images/story/ngay-dau-len-ha-noi.jpg"></div>
+                        <div class="timeline-badge lazy" data-src="images/story/ngay-dau-len-ha-noi.webp"></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h3 class="timeline-title">Những ngày đầu lên Thủ đô</h3>
@@ -73,7 +73,7 @@
                         </div>
                     </li>
                     <li class="timeline-inverted animate-box">
-                        <div class="timeline-badge lazy" data-src="images/story/du-lich-ba-vi.jpg"></div>
+                        <div class="timeline-badge lazy" data-src="images/story/du-lich-ba-vi.webp"></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h3 class="timeline-title">Phượt Ba Vì</h3>
@@ -85,7 +85,7 @@
                         </div>
                     </li>
                     <li class="animate-box">
-                        <div class="timeline-badge lazy" data-src="images/story/quan-su.jpg"></div>
+                        <div class="timeline-badge lazy" data-src="images/story/quan-su.webp"></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h3 class="timeline-title">Kỳ học quân sự</h3>
@@ -97,7 +97,7 @@
                         </div>
                     </li>
                     <li class="timeline-inverted animate-box">
-                        <div class="timeline-badge lazy" data-src="images/story/ho-tay.jpg"></div>
+                        <div class="timeline-badge lazy" data-src="images/story/ho-tay.webp"></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h3 class="timeline-title">Một thoáng Hồ Tây</h3>
@@ -109,7 +109,7 @@
                         </div>
                     </li>
                     <li class="animate-box">
-                        <div class="timeline-badge lazy" data-src="images/story/co-vu-bong-da.jpg"></div>
+                        <div class="timeline-badge lazy" data-src="images/story/co-vu-bong-da.webp"></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h3 class="timeline-title">Cổ vũ bóng đá</h3>
@@ -121,7 +121,7 @@
                         </div>
                     </li>
                     <li class="timeline-inverted animate-box">
-                        <div class="timeline-badge lazy" data-src="images/story/ky-yeu-dai-hoc.jpg"></div>
+                        <div class="timeline-badge lazy" data-src="images/story/ky-yeu-dai-hoc.webp"></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h3 class="timeline-title">Kỷ yếu Đại học</h3>
@@ -133,7 +133,7 @@
                         </div>
                     </li>
                     <li class="animate-box">
-                        <div class="timeline-badge lazy" data-src="images/story/du-lich-ha-long.jpg"></div>
+                        <div class="timeline-badge lazy" data-src="images/story/du-lich-ha-long.webp"></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h3 class="timeline-title">Hạ Long cùng hội bạn thân</h3>
@@ -145,7 +145,7 @@
                         </div>
                     </li>
                     <li class="timeline-inverted animate-box">
-                        <div class="timeline-badge lazy" data-src="images/story/sinh-nhat.jpg"></div>
+                        <div class="timeline-badge lazy" data-src="images/story/sinh-nhat.webp"></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h3 class="timeline-title">Sinh nhật</h3>
@@ -157,7 +157,7 @@
                         </div>
                     </li>
                     <li class="animate-box">
-                        <div class="timeline-badge lazy" data-src="images/story/hen-ho.jpg"></div>
+                        <div class="timeline-badge lazy" data-src="images/story/hen-ho.webp"></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h3 class="timeline-title">Hẹn hò</h3>
@@ -169,7 +169,7 @@
                         </div>
                     </li>
                     <li class="timeline-inverted animate-box">
-                        <div class="timeline-badge lazy" data-src="images/story/du-lich-da-nang.jpg"></div>
+                        <div class="timeline-badge lazy" data-src="images/story/du-lich-da-nang.webp"></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h3 class="timeline-title">Tour Huế - Đà Nẵng - Hội An</h3>
@@ -181,7 +181,7 @@
                         </div>
                     </li>
                     <li class="animate-box">
-                        <div class="timeline-badge lazy" data-src="images/story/dam-cuoi.jpg"></div>
+                        <div class="timeline-badge lazy" data-src="images/story/dam-cuoi.webp"></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h3 class="timeline-title">Ngày chung đôi</h3>

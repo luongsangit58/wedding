@@ -3,7 +3,11 @@
     shuffle($arrGallery);
     $arrGalleryShuffle = array_slice($arrGallery, 0, 6);
 ?>
-<div id="fh5co-gallery" class="fh5co-bg-bottom lazy" data-src="https://img.freepik.com/free-photo/blank-elegant-floral-frame-design_53876-128149.jpg?w=1380" data-scroll-top="anh">
+@if(Route::current()->getName() == 'anh')
+<div id="fh5co-gallery" class="fh5co-bg-bottom" data-scroll-top="anh">
+@else
+<div id="fh5co-gallery" class="fh5co-bg-bottom lazy" data-src="images/block/anh.webp" data-scroll-top="anh">
+@endif
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
@@ -20,17 +24,17 @@
                 <ul id="fh5co-gallery-list">
                     @if(Route::current()->getName() == 'anh')
                         @foreach ($arrGallery as $i)
-                            <li class="one-third animate-box lazy" data-src="images/gallery/gallery-{{ $i }}.jpg" data-animate-effect="fadeIn"> 
-                                <a href="images/gallery/gallery-{{ $i }}.jpg" class="image-popup">
-                                    <img data-src="images/gallery/gallery-{{ $i }}.jpg" class="item-gallery lazy"/>
+                            <li class="one-third animate-box lazy" data-src="images/gallery/webp/gallery-{{ $i }}.webp" data-animate-effect="fadeIn"> 
+                                <a href="images/gallery/webp/gallery-{{ $i }}.webp" class="image-popup">
+                                    <img data-src="images/gallery/webp/gallery-{{ $i }}.webp" class="item-gallery lazy"/>
                                 </a>
                             </li>
                         @endforeach
                     @else
                         @foreach ($arrGalleryShuffle as $i)
-                            <li class="one-third animate-box lazy" data-src="images/gallery/gallery-{{ $i }}.jpg" data-animate-effect="fadeIn"> 
-                                <a href="images/gallery/gallery-{{ $i }}.jpg" class="image-popup">
-                                    <img data-src="images/gallery/gallery-{{ $i }}.jpg" class="item-gallery lazy"/>
+                            <li class="one-third animate-box lazy" data-src="images/gallery/webp/gallery-{{ $i }}.webp" data-animate-effect="fadeIn"> 
+                                <a href="images/gallery/webp/gallery-{{ $i }}.webp" class="image-popup">
+                                    <img data-src="images/gallery/webp/gallery-{{ $i }}.webp" class="item-gallery lazy"/>
                                 </a>
                             </li>
                         @endforeach

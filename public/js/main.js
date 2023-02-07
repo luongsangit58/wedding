@@ -353,5 +353,6 @@
 		switchNav();
 		lazyLoading();
 		sentWish();
+		$('[data-toggle="tooltip"]').tooltip();
 	});
 }());
