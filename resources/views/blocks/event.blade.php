@@ -1,4 +1,4 @@
-<div id="fh5co-event" class="fh5co-bg-top lazy" data-src="https://img.freepik.com/free-vector/freedom-rose-red-flower-frame-background-with-white-space_41066-2563.jpg?w=1380">
+<div id="fh5co-event" class="fh5co-bg-top lazy" data-src="images/block/event.webp">
     <div class="overlay"></div>
     <div class="container">
         <div class="row">
