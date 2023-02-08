@@ -10,4 +10,5 @@
         @include('blocks.footer') 
 	</div>  
     @include('blocks.gototop') 
+    @include('blocks.sendwishicon')
 @endsection

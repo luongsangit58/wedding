@@ -1,8 +1,8 @@
-<div class="bg-card-invitation lazy" data-src="https://img.freepik.com/premium-vector/blossoming-light-pink-sakura-flowers_88211-11.jpg?w=1380">
+<div class="bg-card-invitation lazy" data-src="/images/block/card-{{ rand(1, 4) }}.webp">
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box box-card-invitation">
-                <h2>Trân trọng kính mời</h2>
+                <h2 style="text-shadow: 3px 3px 3px #fff, 0 0 1em #fff, 0 0 0.2em #fff;">Trân trọng kính mời</h2>
                 <p class="card-invitation-people-invitation">{{ $invitation->name_display }}</p>
                 <p>tới dự lễ thành hôn của {{ $invitation->relationship }}</p>
                 <p class="card-invitation-name">Lương Sang  <i class="bi bi-suit-heart-fill"></i>  Hà Trang</p>

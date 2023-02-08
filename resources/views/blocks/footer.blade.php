@@ -8,9 +8,9 @@
                 </p>
                 <p>
                     <ul class="fh5co-social-icons">
-                        <li><a href="https://www.facebook.com/LuongSangIT58" target="_blank"><i class="bi bi-facebook"></i></a></li>
-                        <li><a href="https://www.instagram.com/salary.sang.58/" target="_blank"><i class="bi bi-instagram"></i></a></li>
-                        <li><a href="https://www.linkedin.com/in/nguyen-luong-sang/" target="_blank"><i class="bi bi-linkedin"></i></a></li>
+                        <li><a href="https://www.facebook.com/LuongSangIT58" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i class="bi bi-facebook"></i></a></li>
+                        <li><a href="https://www.instagram.com/salary.sang.58/" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Instagram"><i class="bi bi-instagram"></i></a></li>
+                        <li><a href="https://www.linkedin.com/in/nguyen-luong-sang/" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Linkedin"><i class="bi bi-linkedin"></i></a></li>
                     </ul>
                 </p>
             </div>

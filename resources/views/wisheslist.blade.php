@@ -5,12 +5,12 @@
 
 @section('content')
 <div class="fh5co-loader"></div>
-<div id="page">
+<div id="page" class="lazy" data-src="/images/block/card-{{ rand(1, 3) }}.webp">
     @include('blocks.nav')
 
     <!-- Slider -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css">
-    <link rel="stylesheet" href="{{ URL::asset('css/slider.css') }}" />
+    <link rel="stylesheet" href="/css/<?= config('global.version'); ?>/slider.css" />
 
     <div class="blog-slider lazy" data-src="https://img.freepik.com/premium-photo/sakura-petals-falling-down-romantic-pink-flowers-falling-rain-flying-petals-pink-wide-background-love-romance-concept-neat-wedding-invitation_174187-6950.jpg?w=1308">
         <div class="blog-slider__wrp swiper-wrapper">

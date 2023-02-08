@@ -337,6 +337,25 @@
 		return part1 + "****@" + part2;
 	};
 
+	var toggleSendWishTooltip = function() {
+		const showTooltip = setInterval(showSendWishTooltip, 2000);
+		function showSendWishTooltip() {
+			$('.send-wish-icon-tooltip').addClass('hidden-send-wish-icon-tooltip');
+		}
+
+		const hiddenTooltip = setInterval(hiddenSendWishTooltip, 4000);
+		function hiddenSendWishTooltip() {
+			$('.send-wish-icon-tooltip').removeClass('hidden-send-wish-icon-tooltip');
+		}
+
+		const myTimeout = setTimeout(myGreeting, 50000);
+
+		function myGreeting() {
+			clearInterval(showTooltip);
+			clearInterval(hiddenTooltip);
+		}
+	};
+
 	$(function(){
 		mobileMenuOutsideClick();
 		parallax();
@@ -353,6 +372,8 @@
 		switchNav();
 		lazyLoading();
 		sentWish();
+		toggleSendWishTooltip();
 		$('[data-toggle="tooltip"]').tooltip();
+
 	});
 }());

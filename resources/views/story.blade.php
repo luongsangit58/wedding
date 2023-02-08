@@ -9,5 +9,6 @@
         @include('blocks.modal')     
         @include('blocks.footer') 
 	</div>  
-    @include('blocks.gototop') 
+    @include('blocks.gototop')
+    @include('blocks.sendwishicon') 
 @endsection

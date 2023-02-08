@@ -95,7 +95,7 @@
 		<link rel="stylesheet" href="{{ URL::asset('css/owl.carousel.min.css') }}" />
 		<link rel="stylesheet" href="{{ URL::asset('css/owl.theme.default.min.css') }}" />
 		<!-- Theme style  -->
-		<link rel="stylesheet" href="{{ URL::asset('css/style.css') }}" />
+		<link rel="stylesheet" href="/css/<?= config('global.version'); ?>/style.css" />
 		<!-- Modernizr JS -->
 		<script src="{{ URL::asset('js/modernizr-2.6.2.min.js') }}"></script>
 	</head>
@@ -126,6 +126,6 @@
 		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.plugins.min.js"></script>
 
 		<!-- Main -->
-		<script src="{{ URL::asset('js/main.js') }}"></script>
+		<script src="/js/<?= config('global.version'); ?>/main.js"></script>
 	</body>
 </html>
