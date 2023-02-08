@@ -24,7 +24,7 @@
                 <ul id="fh5co-gallery-list">
                     @if(Route::current()->getName() == 'anh')
                         @foreach ($arrGallery as $i)
-                            <li class="one-third animate-box lazy" data-src="images/gallery/webp/gallery-{{ $i }}.webp" data-animate-effect="fadeIn"> 
+                            <li class="one-third animate-box gallary-item lazy" data-src="images/gallery/webp/gallery-{{ $i }}.webp" data-animate-effect="fadeIn"> 
                                 <a href="images/gallery/webp/gallery-{{ $i }}.webp" class="image-popup">
                                     <img data-src="images/gallery/webp/gallery-{{ $i }}.webp" class="item-gallery lazy"/>
                                 </a>
@@ -32,7 +32,7 @@
                         @endforeach
                     @else
                         @foreach ($arrGalleryShuffle as $i)
-                            <li class="one-third animate-box lazy" data-src="images/gallery/webp/gallery-{{ $i }}.webp" data-animate-effect="fadeIn"> 
+                            <li class="one-third animate-box gallary-item lazy" data-src="images/gallery/webp/gallery-{{ $i }}.webp" data-animate-effect="fadeIn"> 
                                 <a href="images/gallery/webp/gallery-{{ $i }}.webp" class="image-popup">
                                     <img data-src="images/gallery/webp/gallery-{{ $i }}.webp" class="item-gallery lazy"/>
                                 </a>

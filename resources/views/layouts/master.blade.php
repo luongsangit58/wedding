@@ -71,11 +71,11 @@
 		<meta property="og:type" content="article" />
 		<meta property="og:url" content="sangtrang.com"/>
 		<meta property="og:site_name" content="sangtrang.com"/>
-		<meta property="og:image" content="{{ URL::asset('images/cta-pc.jpeg') }}">
+		<meta property="og:image" content="{{ URL::asset('images/cta/cta-pc.webp') }}">
 		<meta property="og:image:type" content="image/png">
 		<meta property="og:description" content="Đám cưới Sang Trang"/>
 
-		<meta name="twitter:image" content="{{ URL::asset('images/cta-pc.jpeg') }}" />
+		<meta name="twitter:image" content="{{ URL::asset('images/cta/cta-pc.webp') }}" />
 		<meta name="twitter:url" content="sangtrang.com" />
 		<meta name="twitter:card" content="Sang Trang" />
 
@@ -126,6 +126,7 @@
 		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.plugins.min.js"></script>
 
 		<!-- Main -->
+		<script src="{{ URL::asset('js/clickHeart.js') }}"></script>
 		<script src="/js/<?= config('global.version'); ?>/main.js"></script>
 	</body>
 </html>
