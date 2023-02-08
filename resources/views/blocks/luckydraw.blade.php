@@ -1,3 +1,4 @@
+<?php if (time() >= config('global.show_lucky_draw') && !empty($luckydraw)) : ?>
 <div id="fh5co-lucky-draw" class="fh5co-bg-top lazy" data-src="https://img.freepik.com/premium-photo/sakura-petals-falling-down-romantic-pink-flowers-falling-rain-flying-petals-pink-wide-background-love-romance-concept-neat-wedding-invitation_174187-6950.jpg?w=1308">
     <div class="overlay"></div>
     <div class="container">
@@ -32,3 +33,4 @@
         </div>
     </div>
 </div>
+<?php endif; ?>
