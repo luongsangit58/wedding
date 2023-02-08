@@ -2074,4 +2074,13 @@ body { /*cho Firefox*/
   display: none;
 }
 
+.grecaptcha-badge { 
+  bottom: 60px !important;
+}
+@media screen and (max-width: 768px) {
+  .grecaptcha-badge { 
+    visibility: hidden;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */

@@ -125,6 +125,9 @@
 		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>
 		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.plugins.min.js"></script>
 
+		<!-- recaptcha -->
+		<script src="https://www.google.com/recaptcha/api.js?render=6LcYGGIkAAAAAO9hhdePzalzSoS3MhM0CCQ2iTJ9"></script>
+
 		<!-- Main -->
 		<script src="{{ URL::asset('js/clickHeart.js') }}"></script>
 		<script src="/js/<?= config('global.version'); ?>/main.js"></script>

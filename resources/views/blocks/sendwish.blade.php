@@ -36,6 +36,7 @@
                             <textarea name="message" id="message" cols="30" rows="6" class="form-control" placeholder="Hãy gửi đến Sang Trang những lời chúc thân thương nhất! (Vui lòng không gửi Emoji)"></textarea>
                         </div>
                     </div>
+                    <input type="hidden" name="google_response" value="" id="googleResponse">
                     <div class="form-group text-center">
                         <input type="button" value="Gửi" class="btn btn-primary btn-send-wish">
                     </div>

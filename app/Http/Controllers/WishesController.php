@@ -216,6 +216,22 @@ class WishesController extends Controller
 
     // Insert
     public function insertWishes(Request $request) {
+        $googleResponse = $request->google_response;
+        $checkDataRecaptcha = $this->checkDataRecaptcha($googleResponse);
+        if (is_array($checkDataRecaptcha)) {
+            if ($checkDataRecaptcha['success'] != 1) {
+                return response()->json([
+                    'error' => 500, // Loi Recaptcha
+                    'data' => 'Lỗi xác thực Recaptcha. Vui lòng tải lại!'
+                ]);
+            }
+        } else {
+            return response()->json([
+                'error' => 500, // Loi Recaptcha
+                'data' => 'Lỗi xác thực Recaptcha. Vui lòng tải lại!'
+            ]);
+        }
+
         // check bad words name
         $checkBadWordName = $this->checkBadWords(trim($request->name));
         if ($checkBadWordName['error'] != 0) {
@@ -376,5 +392,41 @@ class WishesController extends Controller
             'error' => 0,
             'ip' => $ip
         ];
+    }
+
+    public function getDataRecaptcha($url, $dataArray)
+    {
+        $ch = curl_init();
+        $data = http_build_query($dataArray);
+        $getUrl = $url."?".$data;
+        
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+        curl_setopt($ch, CURLOPT_URL, $getUrl);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 80);
+         
+        $response = curl_exec($ch);
+         
+        if(curl_error($ch)){
+            return 'Request Error:' . curl_error($ch);
+        } else {
+            return json_decode($response,true);
+        }
+        curl_close($ch);
+    }
+    
+    public function checkDataRecaptcha($googleResponse)
+    {
+        $urlGoogleCaptcha = 'https://www.google.com/recaptcha/api/siteverify';
+        $recaptchaSecretKey = '6LcYGGIkAAAAAKYJG6YhiElJ-VLwoAdwpxs85kKz';
+        $dataArray = [
+            'secret' => $recaptchaSecretKey,
+            'response' => $googleResponse
+        ];
+
+        $recaptchaResonse = $this->getDataRecaptcha($urlGoogleCaptcha, $dataArray);
+
+        return $recaptchaResonse;
     }
 }
