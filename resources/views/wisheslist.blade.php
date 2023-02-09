@@ -5,7 +5,7 @@
 
 @section('content')
 <div class="fh5co-loader"></div>
-<div id="page" class="lazy" data-src="/images/block/card-{{ rand(1, 3) }}.webp">
+<div id="page" class="bg-card-invitation lazy" data-src="/images/block/card-{{ rand(1, 3) }}.webp">
     @include('blocks.nav')
 
     <!-- Slider -->
