@@ -3,7 +3,7 @@
 @section('content')
     <div class="table-responsive">
         <br>
-        <h3 class="text-center">Lời chúc</h3>
+        <h3 class="text-center">Lời chúc [{{ count($wishes) }}]</h3>
         <table class="table table-bordered">
             <thead>
                 <tr>

@@ -3,7 +3,7 @@
 @section('content')
     <div class="table-responsive">
         <br>
-        <h3 class="text-center">Thiệp mời</h3>
+        <h3 class="text-center">Thiệp mời [{{ count($invitations) }}]</h3>
         <a href="/invitation/insert" class="btn btn-info text-center">Thêm thiệp mời</a>
         <table class="table table-bordered">
             <thead>
