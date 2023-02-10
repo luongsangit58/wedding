@@ -934,7 +934,6 @@ form label {
   font-size: 100px;
   line-height: 1.5;
   font-family: "Great Vibes", Arial, serif;
-  //text-shadow: 4px 3px 4px rgb(71, 71, 71);
   text-shadow: 3px 3px 3px #000, 0 0 1em #000, 0 0 0.2em #000;
 }
 
@@ -2216,12 +2215,48 @@ body {
   display: none;
 }
 
+/* Hidden grecaptcha */
 .grecaptcha-badge {
-  bottom: 60px !important;
+  visibility: hidden;
 }
 
-@media screen and (max-width: 768px) {
-  .grecaptcha-badge {
-      visibility: hidden;
-  }
+/* //  HEART CODE */
+.altheart {
+  background: url(
+http://static.indigoimages.ca/2016/shop/113439_img25_twotoneheart.png) no-repeat center;
+  width: 24px;
+  height: 21px;
+  position: relative;
+  display: block;
+}
+
+.heart-falling {
+    position: relative;
+}
+.heart-falling:before,
+.heart-falling:after {
+    position: absolute;
+    content: "";
+    left: 18px;
+    top: 0;
+    width: 18px;
+    height: 30px;
+    background: #CC2022;
+    -moz-border-radius: 20px 50% 0 0;
+    border-radius: 30px 30px 0 0;
+    -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    -webkit-transform-origin: 0 100%;
+        -ms-transform-origin: 0 100%;
+            transform-origin: 0 100%;
+}
+.heart-falling:after {
+    left: 0;
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+    -webkit-transform-origin: 100% 100%;
+        -ms-transform-origin: 100% 100%;
+            transform-origin :100% 100%;
 }

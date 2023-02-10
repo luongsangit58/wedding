@@ -188,7 +188,7 @@
                                 <span class="date">25/02/2023</span>
                             </div>
                             <div class="timeline-body">
-                                <p>Để nói "Anh yêu em" có lẽ anh chẳng cần mất đến 10 giây đối với bất kỳ ngôn ngữ nào. Nhưng để chứng minh điều đó anh đã giành hơn 10 năm và sẽ là cả cuộc đời để thực hiện.</p>
+                                <p>Để nói "Anh yêu em" có lẽ anh chẳng cần mất đến 10 giây đối với bất kỳ ngôn ngữ nào trên thế giới. Nhưng để chứng minh điều đó anh đã dành ra hơn 10 năm và sẽ là cả cuộc đời để thực hiện.</p>
                             </div>
                         </div>
                     </li>
