@@ -29,7 +29,7 @@
             @foreach ($wishes as $id => $wish)
             <div class="blog-slider__item swiper-slide">
                 <div class="blog-slider__img">
-                    <img data-src="images/gallery/resize/gallery-<?= array_rand($listIdGallery, 1) ?>.webp" class="lazy"/>
+                    <img data-src="images/gallery/{{ config('global.version') }}/resize/gallery-<?= array_rand($listIdGallery, 1) ?>.webp" class="lazy"/>
                 </div>
                 <div class="blog-slider__content">
                     <div class="blog-slider__title">{{ $wish->name }}</div>
