@@ -1,4 +1,4 @@
-<div class="bg-card-invitation lazy" data-src="/images/block/card-{{ rand(1, 4) }}.webp">
+<div class="bg-card-invitation lazy" data-src="/images/block/card-{{ rand(1, 6) }}.webp">
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box box-card-invitation">
