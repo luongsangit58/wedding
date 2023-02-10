@@ -81,6 +81,17 @@ class WishesController extends Controller
         return view('wisheslist')->with('wishes', $wishes);
     }
 
+    // Get all keys
+    public function getKeyWishes() {
+        $keyes = DB::table('loi_chuc')->select('key')->get()->toArray();
+        $listKeyes = [];
+        foreach ($keyes as $value) {
+            $listKeyes[] += $value->key;
+        }
+
+        return $listKeyes;
+    }
+
     // POST lucky draw wish
     public function postLuckyDrawWish() {
         try {            
@@ -269,6 +280,13 @@ class WishesController extends Controller
         }
 
         $key = $this->genUid(4);
+        if (in_array($key, $this->getKeyWishes())) {
+            return response()->json([
+                'error' => 500, // Loi trung key
+                'data' => 'Đã có lỗi xảy ra. Vui lòng thử lại sau. Xin cảm ơn!'
+            ]);
+        }
+
         try {
             date_default_timezone_set('Asia/Ho_Chi_Minh');
             $curentTime = date("Y-m-d H:i:s");
@@ -285,7 +303,7 @@ class WishesController extends Controller
             } catch (\Exception $e) {
                 return response()->json([
                     'error' => 500,
-                    'data' => 'Đã có lỗi xảy ra với dữ liệu bạn gửi. Vui lòng thử lại sau :('
+                    'data' => 'Đã có lỗi xảy ra với dữ liệu bạn nhập. Vui lòng thử lại sau!'
                 ]);
             }
                
@@ -325,13 +343,13 @@ class WishesController extends Controller
         } catch (\Exception $e) {
             return response()->json([
                 'error' => 500,
-                'data' => 'Đã có lỗi xảy ra :('
+                'data' => 'Đã có lỗi xảy ra. Vui lòng thử lại sau. Xin cảm ơn!'
             ]);
         }
 
         return response()->json([
             'error' => 500,
-            'data' => 'Đã có lỗi xảy ra :('
+            'data' => 'Đã có lỗi xảy ra. Vui lòng thử lại sau. Xin cảm ơn!'
         ]);
     }
 
