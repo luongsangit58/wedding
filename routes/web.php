@@ -40,11 +40,7 @@ Route::get('/anh', ['as'=>'anh', function() {
 }]);
 
 Route::get('/gui-loi-chuc', ['as'=>'gui-loi-chuc', function() {
-    if (time() < config('global.stop_send_wish')) {
-        return view('wishes');
-    } else {
-        return redirect('/');
-    }
+    return view('wishes');
 }]);
 
 Route::get('/chuyen-tinh', ['as'=>'chuyen-tinh', function() {

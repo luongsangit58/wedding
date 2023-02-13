@@ -53,11 +53,9 @@ class WishesController extends Controller
         $wishes = DB::table('loi_chuc')->get()->toArray();
         shuffle($wishes);
         $data = array_slice($wishes, 0, 6);
-
         foreach ($data as $key => $value) {
             $value->email = $this->obfuscateEmail($value->email);
         }
-
         $luckyDraw = DB::table('loi_chuc')->where('lucky_draw', '1')->get()->toArray();
         foreach ($luckyDraw as $key => $value) {
             $value->email = $this->obfuscateEmail($value->email);
@@ -73,7 +71,6 @@ class WishesController extends Controller
     public function getWishes() {
         $wishes = DB::table('loi_chuc')->get()->toArray();
         shuffle($wishes);
-
         foreach ($wishes as $key => $value) {
             $value->email = $this->obfuscateEmail($value->email);
         }
@@ -97,7 +94,6 @@ class WishesController extends Controller
         try {            
             $wishes = DB::table('loi_chuc')->where('lucky_draw', '0')->get()->toArray();
             shuffle($wishes);
-
             $luckyDraw1 = current($wishes);
             $luckyDraw2 = end($wishes);
 
@@ -105,13 +101,11 @@ class WishesController extends Controller
             DB::table('loi_chuc')->where('id', $luckyDraw1->id)->update(['lucky_draw' => '1']);
             DB::table('loi_chuc')->where('id', $luckyDraw2->id)->update(['lucky_draw' => '1']);
 
-
             // Data send email lucky draw
             $mailLuckyDraw1 = [
                 'name' => trim($luckyDraw1->name),
                 'key' => $luckyDraw1->key
             ];
-            
             $mailLuckyDraw2 = [
                 'name' => trim($luckyDraw2->name),
                 'key' => $luckyDraw2->key
@@ -130,7 +124,6 @@ class WishesController extends Controller
             } catch (\Exception $th) {
                 Mail::to('luongsangit58@gmail.com')->send(new LuckyDrawMail($mailLuckyDraw2));
             }
-            
             foreach ($wishes as $key => $value) {
                 $value->email = $this->obfuscateEmail($value->email);
             }
@@ -227,6 +220,7 @@ class WishesController extends Controller
 
     // Insert
     public function insertWishes(Request $request) {
+        // Check Recaptcha
         $googleResponse = $request->google_response;
         $checkDataRecaptcha = $this->checkDataRecaptcha($googleResponse);
         if (is_array($checkDataRecaptcha)) {
@@ -279,13 +273,14 @@ class WishesController extends Controller
             ]);
         }
 
+        // Check trung key
         $key = $this->genUid(4);
-        if (in_array($key, $this->getKeyWishes())) {
-            return response()->json([
-                'error' => 500, // Loi trung key
-                'data' => 'Đã có lỗi xảy ra. Vui lòng thử lại sau. Xin cảm ơn!'
-            ]);
-        }
+        // if (in_array($key, $this->getKeyWishes())) {
+        //     return response()->json([
+        //         'error' => 500, // Loi trung key
+        //         'data' => 'Đã có lỗi xảy ra. Vui lòng thử lại sau. Xin cảm ơn!'
+        //     ]);
+        // }
 
         try {
             date_default_timezone_set('Asia/Ho_Chi_Minh');
@@ -307,33 +302,28 @@ class WishesController extends Controller
                 ]);
             }
                
-            // Sent email until 12a.m 25/02/2023
-            if (time() < config('global.stop_send_wish')) {
-                try {
-                    $mailData = [
-                        'name' => trim($request->name),
-                        'content' => trim($request->content),
-                        'key' => $key
-                    ];
-    
-                    Mail::to($request->email)->send(new DemoMail($mailData));
-                    $affected = DB::table('loi_chuc')->where('id', $id)->update(['sent_email' => 1]);
-
-                    $mailNotificationData = [
-                        'name' => $request->name,
-                        'content' => trim($request->content),
-                        'email' => $request->email,
-                        'time' => $curentTime
-                    ];
-                    Mail::to('luongsangit58@gmail.com')->send(new NotificationMail($mailNotificationData));
-                } catch (\Exception $e) {
-                    $mailData = [
-                        'name' => 'Gửi email thất bại ['.$request->email.'] '.$request->name,
-                        'content' => trim($request->content),
-                        'key' => $key
-                    ];
-                    Mail::to('luongsangit58@gmail.com')->send(new DemoMail($mailData));
-                }
+            try {
+                $mailData = [
+                    'name' => trim($request->name),
+                    'content' => trim($request->content),
+                    'key' => $key
+                ];
+                Mail::to($request->email)->send(new DemoMail($mailData));
+                $affected = DB::table('loi_chuc')->where('id', $id)->update(['sent_email' => 1]);
+                $mailNotificationData = [
+                    'name' => $request->name,
+                    'content' => trim($request->content),
+                    'email' => $request->email,
+                    'time' => $curentTime
+                ];
+                Mail::to('luongsangit58@gmail.com')->send(new NotificationMail($mailNotificationData));
+            } catch (\Exception $e) {
+                $mailData = [
+                    'name' => 'Gửi email thất bại ['.$request->email.'] '.$request->name,
+                    'content' => trim($request->content),
+                    'key' => $key
+                ];
+                Mail::to('luongsangit58@gmail.com')->send(new DemoMail($mailData));
             }
             
             return response()->json([
@@ -361,7 +351,6 @@ class WishesController extends Controller
     {
         $arrText = explode(' ', $text);
         $newArr = [];
-
         foreach ($arrText as $text) {
             if (in_array(strtolower($text), $this->except)) {
                 return [
@@ -371,7 +360,6 @@ class WishesController extends Controller
             }
             $newArr[] = $text;
         }
-
         $newArr = implode(' ', $newArr);
 
         return [
@@ -385,31 +373,12 @@ class WishesController extends Controller
         if ($email == '') {
             return '';
         }
-
         $em   = explode("@",$email);
         $name = implode('@', array_slice($em, 0, count($em)-1));
         // $len  = floor(strlen($name) - 3);
         $len = (strlen($name) > 3) ? 3 : 2;
     
         return substr($name, 0, strlen($name) - $len) . str_repeat('*', $len) . "@" . end($em);   
-    }
-
-    public function getRealIPAddress()
-    {
-        if(!empty($_SERVER['HTTP_CLIENT_IP'])){
-            //check ip from share internet
-            $ip = $_SERVER['HTTP_CLIENT_IP'];
-        }else if(!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){
-            //to check ip is pass from proxy
-            $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
-        }else{
-            $ip = $_SERVER['REMOTE_ADDR'];
-        }
-
-        return [
-            'error' => 0,
-            'ip' => $ip
-        ];
     }
 
     public function getDataRecaptcha($url, $dataArray)
@@ -425,12 +394,12 @@ class WishesController extends Controller
         curl_setopt($ch, CURLOPT_TIMEOUT, 80);
          
         $response = curl_exec($ch);
-         
         if(curl_error($ch)){
             return 'Request Error:' . curl_error($ch);
         } else {
             return json_decode($response,true);
         }
+
         curl_close($ch);
     }
     
@@ -442,7 +411,6 @@ class WishesController extends Controller
             'secret' => $recaptchaSecretKey,
             'response' => $googleResponse
         ];
-
         $recaptchaResonse = $this->getDataRecaptcha($urlGoogleCaptcha, $dataArray);
 
         return $recaptchaResonse;
