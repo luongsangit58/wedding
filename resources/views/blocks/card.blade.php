@@ -1,4 +1,11 @@
-<div class="bg-card-invitation lazy" data-src="/images/block/card-{{ rand(1, 6) }}.webp">
+<div class="bg-card-invitation lazy" data-src="/images/block/card-{{ rand(1, 5) }}.webp">
+    <div class="heart-falling x1"></div>
+    <div class="heart-falling x2"></div>
+    <div class="heart-falling x3"></div>
+    <div class="heart-falling x4"></div>
+    <div class="heart-falling x5"></div>
+    <div class="altheart x6"></div>
+
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box box-card-invitation">
