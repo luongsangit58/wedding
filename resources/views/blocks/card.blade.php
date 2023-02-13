@@ -1,4 +1,4 @@
-<div class="bg-card-invitation lazy" data-src="/images/block/card-{{ rand(1, 5) }}.webp">
+<div class="bg-card-invitation lazy" data-src="/images/block/card-{{ rand(1, 6) }}.webp">
     <div class="heart-falling x1"></div>
     <div class="heart-falling x2"></div>
     <div class="heart-falling x3"></div>
