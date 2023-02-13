@@ -4,7 +4,6 @@
 
 body {
   background-color: #FFF;
-  /* background-image: url(https://img.freepik.com/premium-vector/blossoming-light-pink-sakura-flowers_88211-11.jpg?w=1380); */
   min-height: 100vh;
   font-family: "Fira Sans", sans-serif;
   display: flex;
@@ -260,7 +259,7 @@ body {
   width: 11px !important;
   text-align: center;
   left: auto !important;
-  top: 50%;
+  top: 38%;
   bottom: auto !important;
   transform: translateY(-50%);
 }
