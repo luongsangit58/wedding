@@ -356,10 +356,10 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 .box-overley {
-    margin-top: 47%;
+    margin-top: 53%;
 }
 
-@media only screen and (max-width: 1536px) {
+@media screen and (max-width: 768px) {
     .box-overley {
         margin-top: 35%;
     }
