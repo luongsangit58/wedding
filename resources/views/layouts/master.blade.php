@@ -71,11 +71,11 @@
 		<meta property="og:type" content="article" />
 		<meta property="og:url" content="sangtrang.com"/>
 		<meta property="og:site_name" content="sangtrang.com"/>
-		<meta property="og:image" content="{{ URL::asset('images/cta/cta-pc.webp') }}">
+		<meta property="og:image" content="{{ URL::asset('images/cta/cta-pc-1.webp') }}">
 		<meta property="og:image:type" content="image/png">
 		<meta property="og:description" content="Đám cưới Sang Trang"/>
 
-		<meta name="twitter:image" content="{{ URL::asset('images/cta/cta-pc.webp') }}" />
+		<meta name="twitter:image" content="{{ URL::asset('images/cta/cta-pc-1.webp') }}" />
 		<meta name="twitter:url" content="sangtrang.com" />
 		<meta name="twitter:card" content="Sang Trang" />
 

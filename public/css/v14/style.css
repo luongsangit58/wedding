@@ -341,7 +341,6 @@ h1, h2, h3, h4, h5, h6, figure {
     top: 0;
     left: 0;
     right: 0;
-    background-image: url('../../images/cta/cta-pc.webp');
     background-position: center center;
     background-attachment: fixed;
     height: 100vh;
@@ -351,6 +350,9 @@ h1, h2, h3, h4, h5, h6, figure {
 
 .fh5co-cover .overlay-pc-1 {
     background-image: url('../../images/cta/cta-pc-1.webp');
+}
+.fh5co-cover .overlay-pc-2 {
+    background-image: url('../../images/cta/cta-pc-2.webp');
 }
 
 .box-overley {
