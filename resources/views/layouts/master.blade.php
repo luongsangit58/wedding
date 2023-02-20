@@ -84,7 +84,7 @@
 		<link href="https://fonts.googleapis.com/css2?family=Caveat&family=Dosis&family=Great+Vibes&family=Gwendolyn:wght@700&family=Playball&display=swap" rel="stylesheet">
 		
 		<!-- Bootstrap-icons-->
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css">
 		<!-- Animate.css -->
 		<link rel="stylesheet" href="{{ URL::asset('css/animate.css') }}" />
 		<!-- Bootstrap  -->
