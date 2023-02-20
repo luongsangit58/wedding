@@ -25,16 +25,16 @@
                     @if(Route::current()->getName() == 'anh')
                         @foreach ($arrGallery as $i)
                             <li class="one-third animate-box gallary-item lazy" data-src="images/gallery/{{ config('global.version') }}/webp/gallery-{{ $i }}.webp" data-animate-effect="fadeIn"> 
-                                <a href="images/gallery/{{ config('global.version') }}/webp/gallery-{{ $i }}.webp" class="image-popup">
-                                    <img data-src="images/gallery/{{ config('global.version') }}/webp/gallery-{{ $i }}.webp" class="item-gallery lazy"/>
+                                <a href="images/gallery/{{ config('global.version') }}/webp/gallery-{{ $i }}.webp" class="image-popup" aria-label="Gallery">
+                                    <img data-src="images/gallery/{{ config('global.version') }}/webp/gallery-{{ $i }}.webp" class="item-gallery lazy" alt="gallery"/>
                                 </a>
                             </li>
                         @endforeach
                     @else
                         @foreach ($arrGalleryShuffle as $i)
                             <li class="one-third animate-box gallary-item lazy" data-src="images/gallery/{{ config('global.version') }}/webp/gallery-{{ $i }}.webp" data-animate-effect="fadeIn"> 
-                                <a href="images/gallery/{{ config('global.version') }}/webp/gallery-{{ $i }}.webp" class="image-popup">
-                                    <img data-src="images/gallery/{{ config('global.version') }}/webp/gallery-{{ $i }}.webp" class="item-gallery lazy"/>
+                                <a href="images/gallery/{{ config('global.version') }}/webp/gallery-{{ $i }}.webp" class="image-popup" aria-label="Gallery">
+                                    <img data-src="images/gallery/{{ config('global.version') }}/webp/gallery-{{ $i }}.webp" class="item-gallery lazy" alt="gallery"/>
                                 </a>
                             </li>
                         @endforeach
@@ -44,7 +44,7 @@
         </div>
         @if(Route::current()->getName() != 'anh')
         <div class="btn-invitition text-center">
-            <a href="/anh" class="btn btn-primary">Xem thêm</a>
+            <a href="/anh" class="btn btn-primary" aria-label="Xem thêm">Xem thêm</a>
         </div>
         @endif
     </div>

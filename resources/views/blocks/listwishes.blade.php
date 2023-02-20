@@ -3,7 +3,7 @@
         <div class="row">
             <div class="row animate-box">
                 <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-                    <h2><a href="/loi-chuc">Lời Chúc</a></h2>
+                    <h2><a href="/loi-chuc" aria-label="Lời chúc">Lời Chúc</a></h2>
                 </div>
             </div>
             <div class="row">
@@ -27,7 +27,7 @@
             </div>
         </div>
         <div class="btn-invitition text-center">
-            <a href="/gui-loi-chuc" class="btn btn-primary">Gửi lời chúc</a>
+            <a href="/gui-loi-chuc" class="btn btn-primary" aria-label="Gửi lời chúc">Gửi lời chúc</a>
         </div>
     </div>
 </div>

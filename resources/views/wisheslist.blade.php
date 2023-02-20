@@ -31,7 +31,7 @@
             @foreach ($wishes as $id => $wish)
             <div class="blog-slider__item swiper-slide">
                 <div class="blog-slider__img">
-                    <img data-src="images/gallery/{{ config('global.version') }}/resize/gallery-<?= array_rand($listIdGallery, 1) ?>.webp" class="lazy"/>
+                    <img data-src="images/gallery/{{ config('global.version') }}/resize/gallery-<?= array_rand($listIdGallery, 1) ?>.webp" class="lazy" alt="wish"/>
                 </div>
                 <div class="blog-slider__content">
                     <div class="blog-slider__title">{{ $wish->name }}</div>
@@ -43,7 +43,7 @@
         </div>
 
         <div class="btn-invitition text-center">
-            <a href="/gui-loi-chuc" class="btn btn-primary">Gửi lời chúc</a>
+            <a href="/gui-loi-chuc" class="btn btn-primary" aria-label="Gửi lời chúc">Gửi lời chúc</a>
         </div>
         <div class="blog-slider__pagination-1">
             <div class="slider__pagination-mb" style="display: none">

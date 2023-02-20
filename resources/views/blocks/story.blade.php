@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-                <h2><a href="/chuyen-tinh">Chuyện Tình</a></h2>
+                <h2><a href="/chuyen-tinh" aria-label="Chuyện tình">Chuyện Tình</a></h2>
                 <p class="poem-love">
                     Tâm bất biến giữa dòng đời vạn biến</br>
                     Ta sẽ cùng nhau lấp biển rời non
