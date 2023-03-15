@@ -40,7 +40,8 @@ Route::get('/anh', ['as'=>'anh', function() {
 }]);
 
 Route::get('/gui-loi-chuc', ['as'=>'gui-loi-chuc', function() {
-    return view('wishes');
+    return redirect('/');
+    // return view('wishes');
 }]);
 
 Route::get('/chuyen-tinh', ['as'=>'chuyen-tinh', function() {

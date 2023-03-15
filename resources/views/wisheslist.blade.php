@@ -42,9 +42,9 @@
             @endforeach
         </div>
 
-        <div class="btn-invitition text-center">
+        <!-- <div class="btn-invitition text-center">
             <a href="/gui-loi-chuc" class="btn btn-primary" aria-label="Gửi lời chúc">Gửi lời chúc</a>
-        </div>
+        </div> -->
         <div class="blog-slider__pagination-1">
             <div class="slider__pagination-mb" style="display: none">
                 <i class="bi bi-chevron-double-left"></i>

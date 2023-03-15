@@ -6,15 +6,15 @@
         @include('blocks.nav')
         @include('blocks.header')
         @include('blocks.couple')
-        @include('blocks.event')    
+        <!-- @include('blocks.event')     -->
         @include('blocks.story')    
         @include('blocks.listwishes')    
         @include('blocks.gallery')    
-        @include('blocks.map')  
-        @include('blocks.sendwish')
+        <!-- @include('blocks.map')   -->
+        <!-- @include('blocks.sendwish') -->
         @include('blocks.footer') 
         @include('blocks.modal') 
 	</div>  
     @include('blocks.gototop') 
-    @include('blocks.sendwishicon') 
+    <!-- @include('blocks.sendwishicon')  -->
 @endsection

@@ -22,7 +22,7 @@
                     <a href="https://goo.gl/maps/N2Tt6RWpY7oHCgi46" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Xem bản đồ" aria-label="Xem bản đồ"><p><i style="color: #828282;">Tại: Khu ẩm thực sinh thái Hoàng Gia 1</i></p></a>
                     <span>Trần Phú, phường Lam Sơn, thị xã Bỉm Sơn, tỉnh Thanh Hoá</span>
                 </p>
-                <a href="/gui-loi-chuc" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="Gửi lời chúc đến Sang Trang" aria-label="Gửi lời chúc">Gửi lời chúc</a>
+                <!-- <a href="/gui-loi-chuc" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="Gửi lời chúc đến Sang Trang" aria-label="Gửi lời chúc">Gửi lời chúc</a> -->
             </div>
         </div>
     </div>
