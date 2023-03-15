@@ -10,6 +10,7 @@
         @include('blocks.story')    
         @include('blocks.listwishes')    
         @include('blocks.gallery')    
+        @include('blocks.album')   
         <!-- @include('blocks.map')   -->
         <!-- @include('blocks.sendwish') -->
         @include('blocks.footer') 

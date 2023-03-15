@@ -39,6 +39,10 @@ Route::get('/anh', ['as'=>'anh', function() {
     return view('gallery');
 }]);
 
+Route::get('/album', ['as'=>'album', function() {
+    return view('album');
+}]);
+
 Route::get('/gui-loi-chuc', ['as'=>'gui-loi-chuc', function() {
     return redirect('/');
     // return view('wishes');

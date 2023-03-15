@@ -46,6 +46,14 @@
 		<meta property="og:title" content="Lời chúc - Sang Trang"/>
 		<meta name="twitter:title" content="Lời chúc - Sang Trang" />
 
+		<!-- album -->
+		@elseif(Route::current()->getName() == 'album')
+		<title>Album - Sang Trang</title>
+        <meta name="description" content="Album - Sang Trang" />
+
+		<meta property="og:title" content="Album - Sang Trang"/>
+		<meta name="twitter:title" content="Album - Sang Trang" />
+
 		<!-- home -->
 		@else
 		<title>Sang Trang</title>
