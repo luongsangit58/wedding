@@ -50,3 +50,8 @@ Route::get('/chuyen-tinh', ['as'=>'chuyen-tinh', function() {
 Route::get('/thiep-moi', function() {
     return redirect('/');
 });
+
+Route::get('/tho', 'App\Http\Controllers\PoemController@index')->name('tho');
+Route::get('/tho/{slug}', 'App\Http\Controllers\PoemController@detail');
+Route::get('/tho/admin/insert', 'App\Http\Controllers\PoemController@insertPoem');
+Route::post('/tho/admin/insert', 'App\Http\Controllers\PoemController@insertPoem');
