@@ -1,7 +1,7 @@
 <?php 
     $arrGallery = range(1, 195); 
-    shuffle($arrGallery);
-    $arrGalleryShuffle = array_slice($arrGallery, 0, 6);
+    // shuffle($arrGallery);
+    $arrGalleryShuffle = array_slice(range(1, 195), 0, 6);
 ?>
 
 <div id="fh5co-gallery-a;bum" class="fh5co-bg-bottom" data-scroll-top="album">
@@ -21,17 +21,17 @@
                 <ul id="fh5co-gallery-list">
                     @if(Route::current()->getName() == 'album')
                         @foreach ($arrGallery as $i)
-                            <li class="one-third animate-box gallary-item lazy" data-src="images/album/{{ $i }}.webp" data-animate-effect="fadeIn"> 
-                                <a href="images/album/{{ $i }}.webp" class="image-popup" aria-label="Gallery">
-                                    <img data-src="images/album/{{ $i }}.webp" class="item-gallery lazy" alt="gallery"/>
+                            <li class="one-third animate-box gallary-item lazy" data-src="images/album/{{ config('global.version') }}/{{ $i }}.webp" data-animate-effect="fadeIn"> 
+                                <a href="images/album/{{ config('global.version') }}/{{ $i }}.webp" class="image-popup" aria-label="Gallery">
+                                    <img data-src="images/album/{{ config('global.version') }}/{{ $i }}.webp" class="item-gallery lazy" alt="gallery"/>
                                 </a>
                             </li>
                         @endforeach
                     @else
                         @foreach ($arrGalleryShuffle as $i)
-                            <li class="one-third animate-box gallary-item lazy" data-src="images/album/{{ $i }}.webp" data-animate-effect="fadeIn"> 
-                                <a href="images/album/{{ $i }}.webp" class="image-popup" aria-label="Gallery">
-                                    <img data-src="images/album/{{ $i }}.webp" class="item-gallery lazy" alt="gallery"/>
+                            <li class="one-third animate-box gallary-item lazy" data-src="images/album/{{ config('global.version') }}/{{ $i }}.webp" data-animate-effect="fadeIn"> 
+                                <a href="images/album/{{ config('global.version') }}/{{ $i }}.webp" class="image-popup" aria-label="Gallery">
+                                    <img data-src="images/album/{{ config('global.version') }}/{{ $i }}.webp" class="item-gallery lazy" alt="gallery"/>
                                 </a>
                             </li>
                         @endforeach
