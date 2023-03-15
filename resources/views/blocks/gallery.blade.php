@@ -14,8 +14,8 @@
                 <!-- <span>Our Memories</span> -->
                 <h2><a href="/anh">Thư Viện Ảnh</a></h2>
                 <p class="poem-love">
-                    Ba chìm bảy nổi giữ trọn tấm lòng son</br>
-                    Yêu nhau đến khi chỉ còn một hơi thở
+                    Tâm bất biến giữa dòng đời vạn biến</br>
+                    Ta sẽ cùng nhau lấp biển rời non
                 </p>
             </div>
         </div>
