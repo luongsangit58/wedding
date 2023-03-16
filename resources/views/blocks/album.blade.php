@@ -1,6 +1,6 @@
 <?php 
     $arrGallery = range(1, 195); 
-    // shuffle($arrGallery);
+    shuffle($arrGallery);
     $arrGalleryShuffle = array_slice(range(1, 195), 0, 6);
 ?>
 
@@ -14,6 +14,9 @@
                     Ba chìm bảy nổi giữ trọn tấm lòng son</br>
                     Yêu nhau đến khi chỉ còn một hơi thở
                 </p>
+            </div>
+            <div class="col-md-12 embed-responsive embed-responsive-16by9" style="margin-bottom: 35px;">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/ilfkFK8CQyI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
         <div class="row row-bottom-padded-md">
