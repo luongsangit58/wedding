@@ -14,10 +14,10 @@
                             <div class="item">
                                 <div class="testimony-slide active text-center">
                                     <blockquote>
-                                        <p>"{{ $wish->content }}"</p>
+                                        <p>"{{ $wish['content'] }}"</p>
                                     </blockquote>
-                                    <span>- {{ $wish->name }} -</span>
-                                    <i>[{{ $wish->email }}]</i>
+                                    <span>- {{ $wish['name'] }} -</span>
+                                    <i>[{{ $wish['email'] }}]</i>
                                 </div>
                             </div>
                             @endforeach
@@ -27,7 +27,7 @@
             </div>
         </div>
         <div class="btn-invitition text-center">
-            <a href="/gui-loi-chuc" class="btn btn-primary" aria-label="Gửi lời chúc">Gửi lời chúc</a>
+            <a href="/loi-chuc" class="btn btn-primary" aria-label="Xem thêm">Xem thêm</a>
         </div>
     </div>
 </div>

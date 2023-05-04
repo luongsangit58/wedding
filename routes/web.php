@@ -15,10 +15,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'App\Http\Controllers\WishesController@index');
 
-Route::get('/ma-so-may-man', 'App\Http\Controllers\WishesController@getLuckyDrawWish')->name('ma-so-may-man');
-Route::post('/ma-so-may-man', 'App\Http\Controllers\WishesController@postLuckyDrawWish');
+// Route::get('/ma-so-may-man', 'App\Http\Controllers\WishesController@getLuckyDrawWish')->name('ma-so-may-man');
+// Route::post('/ma-so-may-man', 'App\Http\Controllers\WishesController@postLuckyDrawWish');
 
-Route::get('/thiep-moi/{key}', 'App\Http\Controllers\InvitationController@index')->name('thiep-moi');
+// Route::get('/thiep-moi/{key}', 'App\Http\Controllers\InvitationController@index')->name('thiep-moi');
 Route::get('/invitation/getAll', 'App\Http\Controllers\InvitationController@getInvitations');
 Route::get('/invitation/delete/{id}', 'App\Http\Controllers\InvitationController@deleteInvitationById');
 Route::get('/invitation/update/{id}', 'App\Http\Controllers\InvitationController@updateInvitationForm');
@@ -53,6 +53,10 @@ Route::get('/chuyen-tinh', ['as'=>'chuyen-tinh', function() {
 }]);
 
 Route::get('/thiep-moi', function() {
+    return redirect('/');
+});
+
+Route::get('/thiep-moi/{key}', function() {
     return redirect('/');
 });
 

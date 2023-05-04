@@ -34,9 +34,9 @@
                     <img data-src="images/gallery/{{ config('global.version') }}/resize/gallery-<?= array_rand($listIdGallery, 1) ?>.webp" class="lazy" alt="wish"/>
                 </div>
                 <div class="blog-slider__content">
-                    <div class="blog-slider__title">{{ $wish->name }}</div>
-                    <span><i>[{{ $wish->email }}]</i></span>
-                    <div class="blog-slider__text">"{{ $wish->content }}"</div>
+                    <div class="blog-slider__title">{{ $wish['name'] }}</div>
+                    <span><i>[{{ $wish['email'] }}]</i></span>
+                    <div class="blog-slider__text">"{{ $wish['content'] }}"</div>
                 </div>
             </div>
             @endforeach
