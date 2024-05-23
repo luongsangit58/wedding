@@ -354,6 +354,12 @@ h1, h2, h3, h4, h5, h6, figure {
 .fh5co-cover .overlay-pc-2 {
     background-image: url('../../images/cta/cta-pc-2.webp');
 }
+.fh5co-cover .overlay-pc-3 {
+    background-image: url('../../images/cta/cta-pc-3.webp');
+}
+.fh5co-cover .overlay-pc-4 {
+    background-image: url('../../images/cta/cta-pc-4.webp');
+}
 
 .box-overley {
     margin-top: 35%;
@@ -361,7 +367,7 @@ h1, h2, h3, h4, h5, h6, figure {
 
 @media screen and (max-width: 768px) {
     .box-overley {
-        margin-top: 35%;
+        margin-top: 30%;
     }
 }
 
@@ -397,6 +403,10 @@ h1, h2, h3, h4, h5, h6, figure {
 
     .fh5co-cover .overlay-mb-3 {
         background-image: url('../../images/cta/cta-mb-3.webp');
+    }
+
+    .fh5co-cover .overlay-mb-4 {
+        background-image: url('../../images/cta/cta-mb-4.webp');
     }
 
     .title-header {
